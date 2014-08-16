@@ -1,5 +1,7 @@
 import nltk
 import re
+from pos_list import pos_list
+from neg_list import neg_list
 from nltk.tokenize.punkt import PunktWordTokenizer
 
 s = raw_input("Enter An Input Text\n")
@@ -8,6 +10,19 @@ s1 = PunktWordTokenizer().tokenize(s)
 print s1
 s2 = nltk.pos_tag(s1)
 print s2
+
+def positive(word):
+	for pos in pos_list:
+		if word == pos:
+			return True
+	return False
+
+def negative(word):
+	for neg in neg_list:
+		if word == neg:
+			return True
+	return False
+
 
 '''
 	1.	CC	Coordinating conjunction
@@ -90,6 +105,23 @@ for words in list:
             noun = i
             break
         noun = noun.replace("/NN","")
-        print adjective
-        print noun
+        print "Adjective : " + adjective
+        if(positive(adjective)):
+            print "Is a Positive Adjective For "
+        else:
+            if(negative(adjective)):
+                print "Is a Negative Adjective For "
+            else:
+                print "Cant Say About The"
 
+        print "Noun : " + noun
+
+
+'''
+TRIAL SENTENCES
+1. This camera has a good focus
+2. This camera has a poor resolution
+3. This camera has nice picture quality
+
+
+'''
