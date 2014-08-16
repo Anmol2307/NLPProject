@@ -1,9 +1,7 @@
 import nltk
-import re
 from nltk.tokenize.punkt import PunktWordTokenizer
 
-s = raw_input("Enter An Input Text\n")
-
+s = "This is ridiculous"
 s1 = PunktWordTokenizer().tokenize(s)
 print s1
 s2 = nltk.pos_tag(s1)
@@ -55,7 +53,7 @@ grammar = r"""
   NP: {<DT|JJ|NN.*>+}          # Chunk sequences of DT, JJ, NN
   PP: {<IN><NP>}               # Chunk prepositions followed by NP
   VP: {<VB.*><NP|PP|CLAUSE>+$} # Chunk verbs and their arguments
-  CLAUSE: {<NP><VP>}           # Chunk NP,VP
+  CLAUSE: {<NP><VP>}           # Chunk NP, VP
   """
 
 cp = nltk.RegexpParser(grammar)
@@ -72,24 +70,3 @@ for (a,b) in s2:
 
 print nouns
 print adjective
-
-
-
-list = re.findall("(NP[^)]*)",s3.pprint())
-for words in list:
-    print words
-    if ("/JJ" in words and "/NN" in words):
-        print "Yes"
-        adjective = re.findall("[A-Za-z]*\/JJ",words)
-        for i in adjective:
-            adjective = i
-            break
-        adjective = adjective.replace("/JJ","")
-        noun = re.findall("[A-Za-z]*\/NN",words)
-        for i in noun:
-            noun = i
-            break
-        noun = noun.replace("/NN","")
-        print adjective
-        print noun
-
