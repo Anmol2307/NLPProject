@@ -19,11 +19,9 @@ def processDataFile():
 	file_noun_list = []
 
 	data_file_address = "data_file.txt"
-	data_processed_file = "data_processed_file.txt"
-	file_in = open(dataFileAddress, 'r')
-	file_out = open(data_processed_file, 'w')
+	file_in = open(data_file_address, 'r')
 	
-	for line in f:
+	for line in file_in:
 		s1 = PunktWordTokenizer().tokenize(line)
 		s2 = nltk.pos_tag(s1)	
 		noun_list = getNouns(s2)
@@ -83,3 +81,7 @@ def getSynAndHyperArrays(file_noun_list):
 
 file_noun_list = processDataFile()
 syn_hyper_array = getSynAndHyperArrays(file_noun_list)
+
+data_processed_file = "data_processed_file.txt"
+file_out = open(data_processed_file, 'w')
+file_out.write(syn_hyper_array)
