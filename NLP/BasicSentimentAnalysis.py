@@ -6,6 +6,7 @@ import re
 from pos_list import pos_list
 from neg_list import neg_list
 from nltk.tokenize.punkt import PunktWordTokenizer
+from data_processed_file import *
 
 s = raw_input("Enter An Input Text\n")
 
@@ -29,16 +30,26 @@ def negative(word):
 			return True
 	return False
 
-grammar = r"""
-  NP: {<DT|JJ|NN.*>+}		  # Chunk sequences of DT, JJ, NN
-  PP: {<IN><NP>}			   # Chunk prepositions followed by NP
-  VP: {<VB.*><NP|PP|CLAUSE>+$} # Chunk verbs and their arguments
-  CLAUSE: {<NP><VP>}		   # Chunk NP,VP
-  """
+def request_update(word):
+	wud_like_to = raw_input("Would You Like To Classify The Aspect? (Y/y)")
+	if(wud_like_to == 'Y' or wud_like_to == 'y'):
+		count = 0
+		for words in feature_list:
+			print words + "(" + str(count) + ")"
+			count += 1
+	update_into = raw_input("What do you classify this into?")
+	update_data(word,int(update_into))
 
-cp = nltk.RegexpParser(grammar)
-s3 = cp.parse(s2)
-print s3
+def update_data(word,position):
+
+
+def print_updated_file():
+	new_feature_list = feature_list
+	new_processed_data = processed_data
+	data_processed_file = "data_processed_file.py"
+	file_out = open(data_processed_file, 'w')
+	file_out.write("feature_list = " + str(new_feature_list))
+	file_out.write("processed_data = " + str(new_processed_data))
 
 nouns = []
 adjective = []
@@ -57,8 +68,18 @@ print adjective
 # nplist = re.findall("(NP[^)]*)",s3.pprint())
 # for np_phrase in nplist:
 
-feature_list=["price", "picture","battery","storage", "upgrade","hardware","feature","size","design","media","sound","service","help-care","overall"]
+grammar = r"""
+NP: {<DT|JJ|NN.*>+}          # Chunk sequences of DT, JJ, NN
+PP: {<IN><NP>}               # Chunk prepositions followed by NP
+VP: {<VB.*><NP|PP|CLAUSE>+$} # Chunk verbs and their arguments
+CLAUSE: {<NP><VP>}           # Chunk NP,VP
+"""
 
+cp = nltk.RegexpParser(grammar)
+s3 = cp.parse(s2)
+print s3
+	
+	
 list = re.findall("(NP[^)]*)",s3.pprint())
 for words in list:
 	print words
@@ -75,25 +96,30 @@ for words in list:
 			break
 		noun = noun.replace("/NN","")
 		final_noun = noun
+		noun_found = False
 		if(noun in feature_list):
 			final_noun = noun
+			noun_found = True
 		else:
 			array_1 = processed_data[0]
 			counter = 0
 			for lists in array_1:
 				if(noun in lists):
+					noun_found = True
 					break
 				else:
 					counter += 1
 			if(counter >= len(feature_list)):
 				final_noun = noun + "_NOT_FOUND"
 			else:
+				noun_found = True
 				final_noun = feature_list[counter]
 			
 			array_2 = processed_data[0]
 			counter = 0
 			for lists in array_2:
 				if(noun in lists):
+					noun_found = True
 					break
 				else:
 					counter += 1
@@ -101,8 +127,12 @@ for words in list:
 			if(counter >= len(feature_list)):
 				final_noun = noun + "_NOT_FOUND"
 			else:
+				noun_found = True
 				final_noun = feature_list[counter]
 
+		if(not noun_found):
+			request_update(noun)
+			
 		print "Sentiment : " + adjective
 		if(positive(adjective)):
 			print "Is a Positive Adjective For "
