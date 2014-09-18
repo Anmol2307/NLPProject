@@ -89,20 +89,27 @@ def matchPureNeg(commands):
 
 		if(changed == []):
 			continue
+
+		#print aspect_word + " : " + command[1] + " : " 
+		#print what_we_know
 		for conj_or_obj in commands:
-			if(not(conj_or_obj[0] == "conj_or" 
-				and conj_or_obj[1] == command[1])):
+			if(not(
+				(conj_or_obj[0] == "conj_or" \
+					or (conj_or_obj[0] == "conj_and" 
+						and not(aspect_word == command[1]))) \
+					and conj_or_obj[1] == command[1])):
 				continue
 			changed[1] = conj_or_obj[2]
 			what_we_know.append(changed)
 		
 		for conj_and_obj in commands:
 			if(not(conj_and_obj[0] == "conj_and" 
-				and conj_and_obj[1] == command[1])):
+				and conj_and_obj[1] == aspect_word)):
 				continue
 			if(conj_and_obj[1] == aspect_word):
 				for words in what_we_know:
-					if(words[])
+					if(words[1] == conj_and_obj[2]):
+						words[3] = 1 - words[3]
 
 def matchConjNeg(commands):
 	for command in commands:
@@ -128,7 +135,9 @@ def matchConjNeg(commands):
 			count += 1
 
 		if(not(found_w1) and not(found_w2)):
-			continue
+			for words in what_we_know:
+				if(words[2] == command[2]):
+					words[3] = 1 - words[3]
 		if(found_w2 and found_w1):
 			what_we_know[w2_count][3] = 1 - what_we_know[w2_count][3]
 		if(found_w1 and not(found_w2)):

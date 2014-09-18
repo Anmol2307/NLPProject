@@ -1,10 +1,10 @@
---The camera has a bad resolution.  
---The camera does not have a good resolution
---The camera has a bad resolution and focus.
---The camera has a bad resolution and good focus.
---The camera has a bad resolution but not focus.
---The camera does not have a good resolution or focus.
+The camera has a bad resolution.  
+The camera does not have a good resolution
+The camera has a bad resolution and focus.
+The camera has a bad resolution and good focus.
+The camera has a bad resolution but not focus.
+The camera does not have a good resolution or focus.
 The camera does not have a good resolution but has a great focus.
---The camera has a bad resolution but not good focus.
+The camera has a bad resolution but not good focus.
 The camera has a great but not amazing resolution.
-The camera does not have a good resolution and good focus.
+--The camera does not have a good resolution and good focus.
