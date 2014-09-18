@@ -1,0 +1,60 @@
+(ROOT
+  (S
+    (NP (DT The) (NN camera))
+    (VP (VBZ has)
+      (NP (DT a) (JJ poor) (NN resolution)))
+    (. .)))
+
+det(camera-2, The-1)
+nsubj(has-3, camera-2)
+root(ROOT-0, has-3)
+det(resolution-6, a-4)
+amod(resolution-6, poor-5)
+dobj(has-3, resolution-6)
+
+(ROOT
+  (S
+    (ADVP (RB Also))
+    (NP (DT this))
+    (VP (VBZ has)
+      (NP (DT a) (JJ bad) (NN focus)))
+    (. .)))
+
+advmod(has-3, Also-1)
+nsubj(has-3, this-2)
+root(ROOT-0, has-3)
+det(focus-6, a-4)
+amod(focus-6, bad-5)
+dobj(has-3, focus-6)
+
+(ROOT
+  (S
+    (NP (PRP I))
+    (VP (VBP think)
+      (SBAR
+        (S
+          (NP (PRP it))
+          (VP (VBZ has)
+            (NP (JJ good) (NN lens))))))
+    (. .)))
+
+nsubj(think-2, I-1)
+root(ROOT-0, think-2)
+nsubj(has-4, it-3)
+ccomp(think-2, has-4)
+amod(lens-6, good-5)
+dobj(has-4, lens-6)
+
+(ROOT
+  (S
+    (NP (PRP It))
+    (VP (VBZ has)
+      (NP (DT a) (JJ great) (NN battery)))
+    (. .)))
+
+nsubj(has-2, It-1)
+root(ROOT-0, has-2)
+det(battery-5, a-3)
+amod(battery-5, great-4)
+dobj(has-2, battery-5)
+
