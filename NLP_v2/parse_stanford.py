@@ -13,17 +13,22 @@ def parseResult():
 	"cc","conj","dobj","marker","neg","npadvmod",
 	"nsubj","root","num","preconj","nn","conj_or","conj_and","conj_negcc"]
 	
+	net_commands_found = []
 	commands_found = []
+
 
 	data_file_address = "stanford_out.txt"
 	file_in = open(data_file_address, 'r')
 	
 	for line in file_in:
+		if(line == "(ROOT\n"):
+			net_commands_found.append(commands_found)
+			commands_found = []
+			continue
 		for word in list_of_commands:
 			pattern = "(" + word + "\(.*\))"
-			# print pattern
 			found = re.findall(pattern,line);
-			# print found
 			if(len(found) > 0):
 				commands_found.append(parseCommand(word,found[0]))
-	return commands_found
+	net_commands_found.append(commands_found)
+	return net_commands_found

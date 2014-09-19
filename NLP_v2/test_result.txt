@@ -1,0 +1,92 @@
+
+STARTING NLP ALGORITHM...
+
+LINE 1 : 
+1.	
+	['ADJ', 'resolution', 'bad', 0]
+	bad is saying negatively for the aspect picture
+
+LINE 2 : 
+1.	
+	['ADJ', 'resolution', 'good', 1]
+	good is NOT saying positively for the aspect picture
+
+LINE 3 : 
+1.	
+	['ADJ', 'resolution', 'bad', 0]
+	bad is saying negatively for the aspect picture
+
+2.	
+	['ADJ', 'focus', 'bad', 0]
+	bad is saying negatively for the aspect focus
+
+LINE 4 : 
+1.	
+	['ADJ', 'resolution', 'bad', 0]
+	bad is saying negatively for the aspect picture
+
+2.	
+	['ADJ', 'focus', 'good', 0]
+	good is saying positively for the aspect focus
+
+LINE 5 : 
+1.	
+	['ADJ', 'resolution', 'good', 0]
+	good is saying positively for the aspect picture
+
+2.	
+	['ADJ', 'focus', 'good', 1]
+	good is NOT saying positively for the aspect focus
+
+LINE 6 : 
+1.	
+	['ADJ', 'resolution', 'good', 1]
+	good is NOT saying positively for the aspect picture
+
+2.	
+	['ADJ', 'focus', 'good', 1]
+	good is NOT saying positively for the aspect focus
+
+LINE 7 : 
+1.	
+	['ADJ', 'resolution', 'good', 1]
+	good is NOT saying positively for the aspect picture
+
+2.	
+	['ADJ', 'focus', 'great', 0]
+	great is saying positively for the aspect focus
+
+LINE 8 : 
+1.	
+	['ADJ', 'resolution', 'bad', 0]
+	bad is saying negatively for the aspect picture
+
+2.	
+	['ADJ', 'focus', 'good', 1]
+	good is NOT saying positively for the aspect focus
+
+LINE 9 : 
+1.	
+	['ADJ', 'resolution', 'great', 0]
+	great is saying positively for the aspect picture
+
+2.	
+	['ADJ', 'resolution', 'amazing', 1]
+	amazing is NOT saying positively for the aspect picture
+
+LINE 10 : 
+1.	
+	['ADJ', 'resolution', 'good', 1]
+	good is NOT saying positively for the aspect picture
+
+2.	
+	['ADJ', 'focus', 'good', 1]
+	good is NOT saying positively for the aspect focus
+
+LINE 11 : 
+1.	
+	['ADJ', 'focus', 'awesome', 0]
+	awesome is saying positively for the aspect focus
+
+
+...DONE

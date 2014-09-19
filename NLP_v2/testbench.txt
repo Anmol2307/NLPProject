@@ -8,4 +8,4 @@ The camera does not have a good resolution but has a great focus.
 The camera has a bad resolution but not good focus.
 The camera has a great but not amazing resolution.
 The camera does not have a good resolution and good focus.
-The camera focus is awesome but not the resolution
+The camera focus is awesome but not the resolution.

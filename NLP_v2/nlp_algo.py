@@ -185,13 +185,18 @@ def printWhatWeKnow():
 		print "\t" + words[2] + " is " + append_word + "saying " + sentiment_type + " for the aspect " + aspect + "\n"
 		count += 1
 
-print "Loading the Stanford Results..."
-commands =  parseResult()
-#print commands
+#print "Loading the Stanford Results..."
+#print "Processing and Implementing Sentiment Analysis...\n\n"
 
-print "Processing and Implementing Sentiment Analysis...\n\n"
-matchAorAdvMod(commands)
-matchConjunctions(commands)
-matchPureNeg(commands)
-matchConjNeg(commands)
-printWhatWeKnow()
+line_number = 1
+for commands in  parseResult():
+	if(commands == []):
+		continue
+	print "LINE " + str(line_number) + " : "
+	what_we_know = []
+	matchAorAdvMod(commands)
+	matchConjunctions(commands)
+	matchPureNeg(commands)
+	matchConjNeg(commands)
+	printWhatWeKnow()
+	line_number += 1
