@@ -11,7 +11,7 @@ def parseCommand(word,line):
 def parseResult():
 	list_of_commands = ["acomp","advmod","amod",
 	"cc","conj","dobj","marker","neg","npadvmod",
-	"nsub","root","num","preconj","nn","conj_or","conj_and","conj_negcc"]
+	"nsubj","root","num","preconj","nn","conj_or","conj_and","conj_negcc"]
 	
 	commands_found = []
 
