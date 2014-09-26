@@ -1,0 +1,48 @@
+<!DOCTYPE html><html><head>
+<script type="text/javascript" src="jquery.js"></script>
+<script src="Chart.js"></script>
+<script src="vis.js"></script>
+<script type="text/javascript">
+$(function(){
+var ctx = document.getElementById("posChart").getContext("2d");
+var data = {labels:
+['battery'],
+datasets: [{
+label: "Sentiment Analysed",
+fillColor: "rgba(37,155,36,0.5)",
+strokeColor: "rgba(37,155,36,0.8)",
+highlightFill: "rgba(37,155,36,0.75)",
+highlightStroke: "rgba(37,155,36,1)",
+data:
+[0.25]}]};
+var myLineChart = new Chart(ctx).Bar(data,{});
+});
+</script>
+</head><body>
+<canvas id="posChart" width="400" height="400"></canvas>
+<canvas id="negChart" width="400" height="400"></canvas>
+<div id="container_1"></div>
+<script type="text/javascript">
+var nodes_1 = [
+{id: 1, label: "battery"},
+{id: 2, label: "battery"},
+{id: 3, label: "life"},
+{id: 4, label: "short"},
+];
+var edges_1 = [
+{from: 1, to: 2},
+{from: 1, to: 3},
+{from: 1, to: 4},
+];
+var container_1 = document.getElementById("container_1");
+var data_1= {
+nodes: nodes_1,
+edges: edges_1
+};
+var options_1 = {
+width: "600px",
+height: "600px"
+};
+var network_1 = new vis.Network(container_1, data_1, options_1);
+</script>
+</body></html>

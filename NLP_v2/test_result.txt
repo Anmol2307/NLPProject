@@ -3,90 +3,70 @@ STARTING NLP ALGORITHM...
 
 LINE 1 : 
 1.	
-	['ADJ', 'resolution', 'bad', 0]
-	bad is saying negatively for the aspect picture
+	['ADJ', 'Canon', 'bad', 0]
+	bad is saying negatively for the aspect unknown feature
 
 LINE 2 : 
-1.	
-	['ADJ', 'resolution', 'good', 1]
-	good is NOT saying positively for the aspect picture
-
 LINE 3 : 
 1.	
-	['ADJ', 'resolution', 'bad', 0]
-	bad is saying negatively for the aspect picture
+	['ADJ', 'quality', 'excellent', 0]
+	excellent is saying positively for the aspect unknown feature
 
 2.	
-	['ADJ', 'focus', 'bad', 0]
-	bad is saying negatively for the aspect focus
+	['ADJ', 'noise', 'excellent', 0]
+	excellent is saying positively for the aspect unknown feature
 
 LINE 4 : 
 1.	
-	['ADJ', 'resolution', 'bad', 0]
-	bad is saying negatively for the aspect picture
+	['ADJ', 'lens', 'has', 0]
+	has is saying unknown for the aspect lens
 
 2.	
-	['ADJ', 'focus', 'good', 0]
-	good is saying positively for the aspect focus
+	['ADJ', 'lens', 'ok', 0]
+	ok is saying unknown for the aspect lens
 
 LINE 5 : 
 1.	
-	['ADJ', 'resolution', 'good', 0]
-	good is saying positively for the aspect picture
+	['ADJ', 'better', 'much', 0]
+	much is saying unknown for the aspect upgrade
 
 2.	
-	['ADJ', 'focus', 'good', 1]
-	good is NOT saying positively for the aspect focus
+	['ADJ', 'shots', 'better', 0]
+	better is saying positively for the aspect unknown feature
 
 LINE 6 : 
 1.	
-	['ADJ', 'resolution', 'good', 1]
-	good is NOT saying positively for the aspect picture
-
-2.	
-	['ADJ', 'focus', 'good', 1]
-	good is NOT saying positively for the aspect focus
+	['ADJ', 'movies', 'excellent', 0]
+	excellent is saying positively for the aspect picture
 
 LINE 7 : 
 1.	
-	['ADJ', 'resolution', 'good', 1]
-	good is NOT saying positively for the aspect picture
+	['ADJ', 'power', 'enough', 0]
+	enough is saying positively for the aspect unknown feature
 
 2.	
-	['ADJ', 'focus', 'great', 0]
-	great is saying positively for the aspect focus
+	['ADJ', 'snaps', 'good', 0]
+	good is saying positively for the aspect unknown feature
+
+3.	
+	['ADJ', 'functions', 'indoor', 0]
+	indoor is saying unknown for the aspect service
 
 LINE 8 : 
 1.	
-	['ADJ', 'resolution', 'bad', 0]
-	bad is saying negatively for the aspect picture
-
-2.	
-	['ADJ', 'focus', 'good', 1]
-	good is NOT saying positively for the aspect focus
+	['ADJ', 'result', 'great', 0]
+	great is saying positively for the aspect unknown feature
 
 LINE 9 : 
 1.	
-	['ADJ', 'resolution', 'great', 0]
-	great is saying positively for the aspect picture
-
-2.	
-	['ADJ', 'resolution', 'amazing', 1]
-	amazing is NOT saying positively for the aspect picture
+	['ADJ', 'I', 'prefer', 0]
+	prefer is saying positively for the aspect unknown feature
 
 LINE 10 : 
 1.	
-	['ADJ', 'resolution', 'good', 1]
-	good is NOT saying positively for the aspect picture
-
-2.	
-	['ADJ', 'focus', 'good', 1]
-	good is NOT saying positively for the aspect focus
+	['ADJ', 'lens', 'alone', 0]
+	alone is saying unknown for the aspect lens
 
 LINE 11 : 
-1.	
-	['ADJ', 'focus', 'awesome', 0]
-	awesome is saying positively for the aspect focus
-
 
 ...DONE

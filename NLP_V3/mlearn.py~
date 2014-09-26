@@ -1,0 +1,23 @@
+#!/usr/bin/python
+
+inputFile = open('data_file.txt', "r")
+parsed_array = []
+
+for line in inputFile :
+	line.strip()
+	if "##" in line:
+		split_line = line.split("##")
+		if split_line[0] != '':
+			if "[" in split_line[0]:
+				aspect_list = split_line[0].split(",")
+				for aspect in aspect_list:
+					if "[" in aspect:
+						header = aspect.split("[")
+						header[1] = header[1].replace("]","")
+				#header 0 is the aspect
+				#header 1 is the positivity/negativity of the sentence
+				#split_line 1 is the sentence
+						parsed_array.append([header[0],header[1],split_line[1]])
+
+#learn from this point forward
+print parsed_array
