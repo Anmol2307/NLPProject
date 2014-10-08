@@ -27,7 +27,7 @@ def compute_for_aspect(aspect,sentence):
   probability = 0
   for word in sentence:
     phrase = aspect + "|" + word
-    if(probability_aspect_given_word.has_key(phrase)):
+    if(phrase in probability_aspect_given_word.keys()):
       probability += probability_aspect_given_word[phrase]
       score += score_aspect_and_word[phrase]
   return [probability,score]
@@ -53,7 +53,7 @@ def understand_sentence(sentence,count):
       m_probability = power[aspect][0]
       m_score = power[aspect][1]
 
-  if(score_map.has_key(m_aspect)):
+  if(m_aspect in score_map.keys()):
     score_map[m_aspect] += m_score
     feature_word_map[m_aspect] += rel_words
   else:

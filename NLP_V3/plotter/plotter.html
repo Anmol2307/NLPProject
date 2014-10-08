@@ -1,53 +1,21 @@
-<!DOCTYPE html><html><head>
-<script type="text/javascript" src="jquery.js"></script>
-<script src="Chart.js"></script>
-<script src="vis.js"></script>
-<script type="text/javascript">
-$(function(){
-var ctx = document.getElementById("posChart").getContext("2d");
-var data = {labels:
-['sound', 'picture', 'upgrade', 'battery', 'feature', 'lens', 'size'],
-datasets: [{
-label: "Sentiment Analysed",
-fillColor: "rgba(37,155,36,0.5)",
-strokeColor: "rgba(37,155,36,0.8)",
-highlightFill: "rgba(37,155,36,0.75)",
-highlightStroke: "rgba(37,155,36,1)",
-data:
-[-5.333333333333333, 246.0937117845599, -4.0, -9.833333333333334, 10.961538461538462, 7.083333333333334, 99.91190476190475]}]};
-var myLineChart = new Chart(ctx).Bar(data,{});
-var ctx = document.getElementById("perChart").getContext("2d");
-var data = [
-{
-value: 40.9090909091,
-color: "#46BFBD",
-highlight: "#5AD3D1",
-label: "Done"
-},
-{
-value: 59.0909090909,
-color:"#F7464A",
-highlight: "#FF5A5E",
-label: "Not Done"
-}];
-var myDoughnutChart = new Chart(ctx).Doughnut(data,{});
-});
-</script>
-</head><body>
-<canvas id="posChart" width="400" height="400"></canvas>
-<canvas id="perChart" width="400" height="400"></canvas>
 <div id="container_1"></div>
 <script type="text/javascript">
 var nodes_1 = [
-{id: 1, label: "sound"},
-{id: 2, label: "audio"},
-{id: 3, label: "video"},
-{id: 4, label: "also"},
+{id: 1, label: "lens"},
+{id: 2, label: "built-in"},
+{id: 3, label: "optical"},
+{id: 4, label: "zoom"},
+{id: 5, label: "lot"},
+{id: 6, label: "price"},
+{id: 7, label: "range"},
 ];
 var edges_1 = [
 {from: 1, to: 2},
 {from: 1, to: 3},
 {from: 1, to: 4},
+{from: 1, to: 5},
+{from: 1, to: 6},
+{from: 1, to: 7},
 ];
 var container_1 = document.getElementById("container_1");
 var data_1= {
@@ -63,6 +31,246 @@ var network_1 = new vis.Network(container_1, data_1, options_1);
 <div id="container_2"></div>
 <script type="text/javascript">
 var nodes_2 = [
+{id: 1, label: "size"},
+{id: 2, label: "small"},
+{id: 3, label: "enough"},
+{id: 4, label: "easily"},
+{id: 5, label: "coat"},
+{id: 6, label: "pocket"},
+{id: 7, label: "purse"},
+{id: 8, label: "big"},
+{id: 9, label: "offensive"},
+{id: 10, label: "'t"},
+{id: 11, label: "know"},
+{id: 12, label: "pics"},
+{id: 13, label: "small"},
+{id: 14, label: "size"},
+{id: 15, label: "perfect"},
+{id: 16, label: "little"},
+{id: 17, label: "hands"},
+{id: 18, label: "perhaps"},
+{id: 19, label: "uncomfortable"},
+{id: 20, label: "awkward"},
+{id: 21, label: "person"},
+{id: 22, label: "easy"},
+{id: 23, label: "camera"},
+{id: 24, label: "manual"},
+{id: 25, label: "easy"},
+{id: 26, label: "mostly"},
+{id: 27, label: "small"},
+{id: 28, label: "canon"},
+{id: 29, label: "slr"},
+{id: 30, label: "so"},
+{id: 31, label: "easily"},
+{id: 32, label: "pocket"},
+{id: 33, label: "easy"},
+{id: 34, label: "enough"},
+{id: 35, label: "grandmother"},
+{id: 36, label: "very"},
+{id: 37, label: "compact"},
+{id: 38, label: "controls"},
+{id: 39, label: "so"},
+{id: 40, label: "well"},
+{id: 41, label: "still"},
+{id: 42, label: "easy"},
+{id: 43, label: "easy"},
+{id: 44, label: "enough"},
+{id: 45, label: "grandmother"},
+{id: 46, label: "very"},
+{id: 47, label: "compact"},
+{id: 48, label: "controls"},
+{id: 49, label: "so"},
+{id: 50, label: "well"},
+{id: 51, label: "still"},
+{id: 52, label: "easy"},
+{id: 53, label: "size"},
+{id: 54, label: "also"},
+{id: 55, label: "travel"},
+];
+var edges_2 = [
+{from: 1, to: 2},
+{from: 1, to: 3},
+{from: 1, to: 4},
+{from: 1, to: 5},
+{from: 1, to: 6},
+{from: 1, to: 7},
+{from: 1, to: 8},
+{from: 1, to: 9},
+{from: 1, to: 10},
+{from: 1, to: 11},
+{from: 1, to: 12},
+{from: 1, to: 13},
+{from: 1, to: 14},
+{from: 1, to: 15},
+{from: 1, to: 16},
+{from: 1, to: 17},
+{from: 1, to: 18},
+{from: 1, to: 19},
+{from: 1, to: 20},
+{from: 1, to: 21},
+{from: 1, to: 22},
+{from: 1, to: 23},
+{from: 1, to: 24},
+{from: 1, to: 25},
+{from: 1, to: 26},
+{from: 1, to: 27},
+{from: 1, to: 28},
+{from: 1, to: 29},
+{from: 1, to: 30},
+{from: 1, to: 31},
+{from: 1, to: 32},
+{from: 1, to: 33},
+{from: 1, to: 34},
+{from: 1, to: 35},
+{from: 1, to: 36},
+{from: 1, to: 37},
+{from: 1, to: 38},
+{from: 1, to: 39},
+{from: 1, to: 40},
+{from: 1, to: 41},
+{from: 1, to: 42},
+{from: 1, to: 43},
+{from: 1, to: 44},
+{from: 1, to: 45},
+{from: 1, to: 46},
+{from: 1, to: 47},
+{from: 1, to: 48},
+{from: 1, to: 49},
+{from: 1, to: 50},
+{from: 1, to: 51},
+{from: 1, to: 52},
+{from: 1, to: 53},
+{from: 1, to: 54},
+{from: 1, to: 55},
+];
+var container_2 = document.getElementById("container_2");
+var data_2= {
+nodes: nodes_2,
+edges: edges_2
+};
+var options_2 = {
+width: "600px",
+height: "600px"
+};
+var network_2 = new vis.Network(container_2, data_2, options_2);
+</script>
+<div id="container_3"></div>
+<script type="text/javascript">
+var nodes_3 = [
+{id: 1, label: "upgrade"},
+{id: 2, label: "only"},
+{id: 3, label: "complaint"},
+{id: 4, label: "card"},
+{id: 5, label: "awesome"},
+{id: 6, label: "camera"},
+{id: 7, label: "huge"},
+{id: 8, label: "print"},
+{id: 9, label: "quality"},
+{id: 10, label: "tiny"},
+{id: 11, label: "package"},
+];
+var edges_3 = [
+{from: 1, to: 2},
+{from: 1, to: 3},
+{from: 1, to: 4},
+{from: 1, to: 5},
+{from: 1, to: 6},
+{from: 1, to: 7},
+{from: 1, to: 8},
+{from: 1, to: 9},
+{from: 1, to: 10},
+{from: 1, to: 11},
+];
+var container_3 = document.getElementById("container_3");
+var data_3= {
+nodes: nodes_3,
+edges: edges_3
+};
+var options_3 = {
+width: "600px",
+height: "600px"
+};
+var network_3 = new vis.Network(container_3, data_3, options_3);
+</script>
+<div id="container_4"></div>
+<script type="text/javascript">
+var nodes_4 = [
+{id: 1, label: "feature"},
+{id: 2, label: "features"},
+{id: 3, label: "amatuer"},
+{id: 4, label: "photo-enthusiast"},
+{id: 5, label: "great"},
+{id: 6, label: "price"},
+{id: 7, label: "features"},
+];
+var edges_4 = [
+{from: 1, to: 2},
+{from: 1, to: 3},
+{from: 1, to: 4},
+{from: 1, to: 5},
+{from: 1, to: 6},
+{from: 1, to: 7},
+];
+var container_4 = document.getElementById("container_4");
+var data_4= {
+nodes: nodes_4,
+edges: edges_4
+};
+var options_4 = {
+width: "600px",
+height: "600px"
+};
+var network_4 = new vis.Network(container_4, data_4, options_4);
+</script>
+<div id="container_5"></div>
+<script type="text/javascript">
+var nodes_5 = [
+{id: 1, label: "battery"},
+{id: 2, label: "battery"},
+{id: 3, label: "life"},
+{id: 4, label: "ok"},
+{id: 5, label: "rechargable"},
+{id: 6, label: "battery"},
+{id: 7, label: "not"},
+{id: 8, label: "last"},
+{id: 9, label: "long"},
+{id: 10, label: "especially"},
+{id: 11, label: "flash"},
+{id: 12, label: "lot"},
+{id: 13, label: "battery"},
+{id: 14, label: "life"},
+{id: 15, label: "excellent"},
+];
+var edges_5 = [
+{from: 1, to: 2},
+{from: 1, to: 3},
+{from: 1, to: 4},
+{from: 1, to: 5},
+{from: 1, to: 6},
+{from: 1, to: 7},
+{from: 1, to: 8},
+{from: 1, to: 9},
+{from: 1, to: 10},
+{from: 1, to: 11},
+{from: 1, to: 12},
+{from: 1, to: 13},
+{from: 1, to: 14},
+{from: 1, to: 15},
+];
+var container_5 = document.getElementById("container_5");
+var data_5= {
+nodes: nodes_5,
+edges: edges_5
+};
+var options_5 = {
+width: "600px",
+height: "600px"
+};
+var network_5 = new vis.Network(container_5, data_5, options_5);
+</script>
+<div id="container_6"></div>
+<script type="text/javascript">
+var nodes_6 = [
 {id: 1, label: "picture"},
 {id: 2, label: "pictures"},
 {id: 3, label: "razor-sharp"},
@@ -240,7 +448,7 @@ var nodes_2 = [
 {id: 175, label: "sharp"},
 {id: 176, label: "images"},
 ];
-var edges_2 = [
+var edges_6 = [
 {from: 1, to: 2},
 {from: 1, to: 3},
 {from: 1, to: 4},
@@ -417,150 +625,6 @@ var edges_2 = [
 {from: 1, to: 175},
 {from: 1, to: 176},
 ];
-var container_2 = document.getElementById("container_2");
-var data_2= {
-nodes: nodes_2,
-edges: edges_2
-};
-var options_2 = {
-width: "600px",
-height: "600px"
-};
-var network_2 = new vis.Network(container_2, data_2, options_2);
-</script>
-<div id="container_3"></div>
-<script type="text/javascript">
-var nodes_3 = [
-{id: 1, label: "upgrade"},
-{id: 2, label: "only"},
-{id: 3, label: "complaint"},
-{id: 4, label: "card"},
-{id: 5, label: "awesome"},
-{id: 6, label: "camera"},
-{id: 7, label: "huge"},
-{id: 8, label: "print"},
-{id: 9, label: "quality"},
-{id: 10, label: "tiny"},
-{id: 11, label: "package"},
-];
-var edges_3 = [
-{from: 1, to: 2},
-{from: 1, to: 3},
-{from: 1, to: 4},
-{from: 1, to: 5},
-{from: 1, to: 6},
-{from: 1, to: 7},
-{from: 1, to: 8},
-{from: 1, to: 9},
-{from: 1, to: 10},
-{from: 1, to: 11},
-];
-var container_3 = document.getElementById("container_3");
-var data_3= {
-nodes: nodes_3,
-edges: edges_3
-};
-var options_3 = {
-width: "600px",
-height: "600px"
-};
-var network_3 = new vis.Network(container_3, data_3, options_3);
-</script>
-<div id="container_4"></div>
-<script type="text/javascript">
-var nodes_4 = [
-{id: 1, label: "battery"},
-{id: 2, label: "battery"},
-{id: 3, label: "life"},
-{id: 4, label: "ok"},
-{id: 5, label: "rechargable"},
-{id: 6, label: "battery"},
-{id: 7, label: "not"},
-{id: 8, label: "last"},
-{id: 9, label: "long"},
-{id: 10, label: "especially"},
-{id: 11, label: "flash"},
-{id: 12, label: "lot"},
-{id: 13, label: "battery"},
-{id: 14, label: "life"},
-{id: 15, label: "excellent"},
-];
-var edges_4 = [
-{from: 1, to: 2},
-{from: 1, to: 3},
-{from: 1, to: 4},
-{from: 1, to: 5},
-{from: 1, to: 6},
-{from: 1, to: 7},
-{from: 1, to: 8},
-{from: 1, to: 9},
-{from: 1, to: 10},
-{from: 1, to: 11},
-{from: 1, to: 12},
-{from: 1, to: 13},
-{from: 1, to: 14},
-{from: 1, to: 15},
-];
-var container_4 = document.getElementById("container_4");
-var data_4= {
-nodes: nodes_4,
-edges: edges_4
-};
-var options_4 = {
-width: "600px",
-height: "600px"
-};
-var network_4 = new vis.Network(container_4, data_4, options_4);
-</script>
-<div id="container_5"></div>
-<script type="text/javascript">
-var nodes_5 = [
-{id: 1, label: "feature"},
-{id: 2, label: "features"},
-{id: 3, label: "amatuer"},
-{id: 4, label: "photo-enthusiast"},
-{id: 5, label: "great"},
-{id: 6, label: "price"},
-{id: 7, label: "features"},
-];
-var edges_5 = [
-{from: 1, to: 2},
-{from: 1, to: 3},
-{from: 1, to: 4},
-{from: 1, to: 5},
-{from: 1, to: 6},
-{from: 1, to: 7},
-];
-var container_5 = document.getElementById("container_5");
-var data_5= {
-nodes: nodes_5,
-edges: edges_5
-};
-var options_5 = {
-width: "600px",
-height: "600px"
-};
-var network_5 = new vis.Network(container_5, data_5, options_5);
-</script>
-<div id="container_6"></div>
-<script type="text/javascript">
-var nodes_6 = [
-{id: 1, label: "lens"},
-{id: 2, label: "built-in"},
-{id: 3, label: "optical"},
-{id: 4, label: "zoom"},
-{id: 5, label: "lot"},
-{id: 6, label: "price"},
-{id: 7, label: "range"},
-];
-var edges_6 = [
-{from: 1, to: 2},
-{from: 1, to: 3},
-{from: 1, to: 4},
-{from: 1, to: 5},
-{from: 1, to: 6},
-{from: 1, to: 7},
-];
 var container_6 = document.getElementById("container_6");
 var data_6= {
 nodes: nodes_6,
@@ -575,117 +639,15 @@ var network_6 = new vis.Network(container_6, data_6, options_6);
 <div id="container_7"></div>
 <script type="text/javascript">
 var nodes_7 = [
-{id: 1, label: "size"},
-{id: 2, label: "small"},
-{id: 3, label: "enough"},
-{id: 4, label: "easily"},
-{id: 5, label: "coat"},
-{id: 6, label: "pocket"},
-{id: 7, label: "purse"},
-{id: 8, label: "big"},
-{id: 9, label: "offensive"},
-{id: 10, label: "'t"},
-{id: 11, label: "know"},
-{id: 12, label: "pics"},
-{id: 13, label: "small"},
-{id: 14, label: "size"},
-{id: 15, label: "perfect"},
-{id: 16, label: "little"},
-{id: 17, label: "hands"},
-{id: 18, label: "perhaps"},
-{id: 19, label: "uncomfortable"},
-{id: 20, label: "awkward"},
-{id: 21, label: "person"},
-{id: 22, label: "easy"},
-{id: 23, label: "camera"},
-{id: 24, label: "manual"},
-{id: 25, label: "easy"},
-{id: 26, label: "mostly"},
-{id: 27, label: "small"},
-{id: 28, label: "canon"},
-{id: 29, label: "slr"},
-{id: 30, label: "so"},
-{id: 31, label: "easily"},
-{id: 32, label: "pocket"},
-{id: 33, label: "easy"},
-{id: 34, label: "enough"},
-{id: 35, label: "grandmother"},
-{id: 36, label: "very"},
-{id: 37, label: "compact"},
-{id: 38, label: "controls"},
-{id: 39, label: "so"},
-{id: 40, label: "well"},
-{id: 41, label: "still"},
-{id: 42, label: "easy"},
-{id: 43, label: "easy"},
-{id: 44, label: "enough"},
-{id: 45, label: "grandmother"},
-{id: 46, label: "very"},
-{id: 47, label: "compact"},
-{id: 48, label: "controls"},
-{id: 49, label: "so"},
-{id: 50, label: "well"},
-{id: 51, label: "still"},
-{id: 52, label: "easy"},
-{id: 53, label: "size"},
-{id: 54, label: "also"},
-{id: 55, label: "travel"},
+{id: 1, label: "sound"},
+{id: 2, label: "audio"},
+{id: 3, label: "video"},
+{id: 4, label: "also"},
 ];
 var edges_7 = [
 {from: 1, to: 2},
 {from: 1, to: 3},
 {from: 1, to: 4},
-{from: 1, to: 5},
-{from: 1, to: 6},
-{from: 1, to: 7},
-{from: 1, to: 8},
-{from: 1, to: 9},
-{from: 1, to: 10},
-{from: 1, to: 11},
-{from: 1, to: 12},
-{from: 1, to: 13},
-{from: 1, to: 14},
-{from: 1, to: 15},
-{from: 1, to: 16},
-{from: 1, to: 17},
-{from: 1, to: 18},
-{from: 1, to: 19},
-{from: 1, to: 20},
-{from: 1, to: 21},
-{from: 1, to: 22},
-{from: 1, to: 23},
-{from: 1, to: 24},
-{from: 1, to: 25},
-{from: 1, to: 26},
-{from: 1, to: 27},
-{from: 1, to: 28},
-{from: 1, to: 29},
-{from: 1, to: 30},
-{from: 1, to: 31},
-{from: 1, to: 32},
-{from: 1, to: 33},
-{from: 1, to: 34},
-{from: 1, to: 35},
-{from: 1, to: 36},
-{from: 1, to: 37},
-{from: 1, to: 38},
-{from: 1, to: 39},
-{from: 1, to: 40},
-{from: 1, to: 41},
-{from: 1, to: 42},
-{from: 1, to: 43},
-{from: 1, to: 44},
-{from: 1, to: 45},
-{from: 1, to: 46},
-{from: 1, to: 47},
-{from: 1, to: 48},
-{from: 1, to: 49},
-{from: 1, to: 50},
-{from: 1, to: 51},
-{from: 1, to: 52},
-{from: 1, to: 53},
-{from: 1, to: 54},
-{from: 1, to: 55},
 ];
 var container_7 = document.getElementById("container_7");
 var data_7= {

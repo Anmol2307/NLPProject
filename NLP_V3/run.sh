@@ -1,4 +1,4 @@
 #!/bin/bash
-python ml_nlp_tester.py
+python3 ml_nlp_tester.py
 cd plotter
-python plotter.py
+python3 plotter_ui.py
