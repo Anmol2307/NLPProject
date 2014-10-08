@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-inputFile = open('data_file.txt', "r")
+inputFile = open('new_data_file.txt', "r")
 parsed_array = []
 
 for line in inputFile :

@@ -36,8 +36,18 @@ feature_word_map = {}
 score_map = {}
 
 def understand_sentence(sentence,count):
+  useless = [',',':','.',';','"',"'",')','(','[',']','{','}','|','>','<','\t','\n']
+  for characters in useless:
+    sentence = sentence.replace(characters,"")
+  sentence = sentence.strip()
+  sentence = sentence.lower()
+  print(count)
+  print(sentence)
   rel_words = remove_unnecessary(sentence)
+  
+  
   sentence = sentence.split()
+
   lmtzr = WordNetLemmatizer()
   for word in sentence:
     word = lmtzr.lemmatize(word)
@@ -52,6 +62,7 @@ def understand_sentence(sentence,count):
       m_aspect = aspect
       m_probability = power[aspect][0]
       m_score = power[aspect][1]
+  print(m_aspect + "\n")
 
   if(m_aspect in score_map.keys()):
     score_map[m_aspect] += m_score
@@ -103,8 +114,15 @@ correct_count = 0
 for lists in header_map.keys():
   count += 1
   for words in header_map[lists]:
-    if(result_header_map[count] in find_aspect(words)):
-      correct_count += 1
+    words = words.strip()
+    words = words.split(' ')
+    found = False
+    for word in words:
+      if(result_header_map[count] in find_aspect(word)):
+        correct_count += 1
+        found = True
+      break
+    if(found):
       break
 
 print_output(correct_count*100.0/(count*1.0))

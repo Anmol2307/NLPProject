@@ -74,8 +74,15 @@ def print_graph(print_file,id,label,aspects):
 	# print_file.write('</script>\n')
 
 count = 1
+def removeDuplicates(array):
+	processArray = []
+	for words in array:
+		if words not in processArray:
+			processArray.append(words)
+	return processArray
+
 for word_map in feature_graph.keys():
-	if(len(feature_graph[word_map]) < 15):
-		print_graph(relation_file ,str(count),word_map,feature_graph[word_map])
-		count += 1
+	# if(len(feature_graph[word_map]) < 15):
+	print_graph(relation_file ,str(count),word_map,removeDuplicates(feature_graph[word_map]))
+	count += 1
 

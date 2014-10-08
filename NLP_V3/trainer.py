@@ -43,32 +43,36 @@ def string_to_int(s):
   except:
     return 0
 
-useless = [',',':','.',';','"',"'",')','(','[',']','{','}','|','>','<']
-
 for tuples in parsed_array:
   aspects = find_aspect(tuples[0])
   if(aspects == []):
     continue
   for aspect in aspects:
     value = string_to_int(tuples[1])
-    for characters in useless:
-      if characters in tuples:
-        tuples.replace(characters,"")
+
     tuples[2] = tuples[2].lower()
-    sentence = remove_unnecessary(tuples[2])
+    
+    useless = [',',':','.',';','"',"'",')','(','[',']','{','}','|','>','<','\t','\n']
+    sentence = tuples[2]
+    for characters in useless:
+      sentence = sentence.replace(characters,"")
+    sentence = sentence.strip()
+    
+    sentence = remove_unnecessary(sentence)
+    
     lmtzr = WordNetLemmatizer()
     for words in sentence:
       words = lmtzr.lemmatize(words)
     for words in sentence:
       phrase = aspect + "|" + words
-      if (probability_aspect_given_word.has_key(phrase)):
+      if (phrase in probability_aspect_given_word.keys()):
         probability_aspect_given_word[phrase] = probability_aspect_given_word[phrase] + 1
         score_aspect_and_word[phrase] = score_aspect_and_word[phrase] + value
       else:
         probability_aspect_given_word[phrase] = 1
         score_aspect_and_word[phrase] = value
 
-      if count_word.has_key(words):
+      if words in count_word.keys():
         count_word[words] += 1
       else:
         count_word[words] = 1
