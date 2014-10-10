@@ -38,12 +38,32 @@
 <img src="images/camera2.jpg" style="width:100%;">
 
 <div class="content_div light_bg">
-  <div class="content_title">
+ 
+
+   <div class="content_title">
+    Conclusions
+  </div>
+  <div class="content_description" id="stat_3">
+    <div class="row">
+        <div class="col-md-6"  style="text-align:center;">          
+            <canvas id="perChart" width="500" height="500"></canvas>  
+            <br/>The Percentage Accuracy For Aspect Detection
+            <div class="value_shower" id="perChartValue"></div>
+        </div>
+        <div class="col-md-6" style="text-align:center;">          
+            <canvas id="sentiPerChart" width="500" height="500"></canvas>  
+            <br/>The Percentage Accuracy For Sentiment Detection
+            <div class="value_shower" id="sentiPerChartValue"></div>
+        </div>
+    </div>
+  </div>
+
+   <div class="content_title">
     Statitics
   </div>
   <div class="content_description" id="stat_1">
     <canvas id="posChart" width="800" height="400"></canvas>
-    <canvas id="negChart" width="800" height="400"></canvas>
+     <canvas id="negChart" width="800" height="400"></canvas> 
     </div>
   </div>
 </div>
@@ -53,25 +73,10 @@
     Results
   </div>
   <div class="content_description" id="stat_2">
+    <table id="precision_table">
+    </table>
   </div>
 </div>
-
-<div class="content_div light_bg">
-  <div class="content_title">
-    Conclusions
-  </div>
-  <div class="content_description" id="stat_3">
-    <div class="row">
-        <div class="col-md-6">          
-            <canvas id="perChart" width="500" height="500"></canvas>  
-        </div>
-        <div class="col-md-6">          
-            <canvas id="sentiPerChart" width="500" height="500"></canvas>  
-        </div>
-    </div>
-  </div>
-</div>
-
 
 <div class="my-navbar-bottom">
   <div class="my-navbar-bottom-content">

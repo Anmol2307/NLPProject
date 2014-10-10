@@ -20,8 +20,13 @@ def remove_unnecessary(sentence):
 
 def create_dictionary(sentence):
 	dictionary = {}
+	count_dictionary = {}
+
+	count = 1
 	for word in bag_of_words:
-		dictionary[word] = 0
+		count_dictionary[word] = count
+		dictionary[count] = 0
+		count += 1
 		
 	useless = [',',':','.',';','"',"'",')','(','[',']','{','}','|','>','<','\t','\n']
 	# sentence = tuples[2]
@@ -31,15 +36,20 @@ def create_dictionary(sentence):
 	sentence = remove_unnecessary(sentence)
 
 	for word in sentence:
-		if(word in dictionary.keys()):
-	  		dictionary[word] += 1
+		if(word in count_dictionary.keys()):
+	  		dictionary[count_dictionary[word]] += 1
 
 	return dictionary
 
 def create_senti_dictionary(sentence):
 	dictionary = {}
+	count_dictionary = {}
+
+	count = 1
 	for word in senti_bag_of_words:
-		dictionary[word] = 0
+		count_dictionary[word] = count
+		dictionary[count] = 0
+		count += 1
 		
 	useless = [',',':','.',';','"',"'",')','(','[',']','{','}','|','>','<','\t','\n']
 	# sentence = tuples[2]
@@ -49,7 +59,8 @@ def create_senti_dictionary(sentence):
 	sentence = remove_unnecessary(sentence)
 
 	for word in sentence:
-		if(word in dictionary.keys()):
-	  		dictionary[word] += 1
+		if(word in count_dictionary.keys()):
+	  		dictionary[count_dictionary[word]] += 1
+	  		# print(word)
 
 	return dictionary

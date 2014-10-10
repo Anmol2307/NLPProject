@@ -17,15 +17,14 @@ feature_list = [
 'lens', 
 'focus', 
 'exposure', 
-'shutter',
-'general'
+'shutter'
 ]
 processed_data = [
 ['rate','worth', 'set', 'price', 'damage', 'cost', 'value', 'money','cheap','expensive','budget','dollar','bill','cash'], 
 ['picture', 'image', 'photo', 'exposure', 'scene', 'pic', 'photograph', 'impression', 'painting'], 
 ['battery','charge','adapter', 'backup','time','worktime','standby'],
 ['store', 'hardware', 'memory', 'ram', 'capacity', 'processor'], 
-['build','use','utility','features','stuff','recommend'], 
+['overall','everything','build','use','utility','features','stuff','recommend'	], 
 #['software', 'range', 'order', 'hardware', 'better', 'place', 'package', 'rank', 'rate', 'advance', 'side'],
 # ['hardware', 'component', 'screen', 'display', 'dial', 'key', 'button'], 
 # ['picture', 'feature', 'movie', 'film', 'pic', 'product', 'have', 'boast', 'sport'],
@@ -39,6 +38,5 @@ processed_data = [
 ['zoom','line', 'lense', 'lens','resolution', 'mp', 'megapixel'],
 ['focus', 'focusing', 'set', 'direction', 'point', 'sharpness', 'center', 'clarity', 'adjust', 'centre'],
 ['photography', 'exposure', 'scene', 'view', 'photograph', 'panorama','lighting','aperture','dark'], 
-['shutter', 'screen','speed'],
-['overall','everything']
+['shutter', 'screen','speed']
 ]

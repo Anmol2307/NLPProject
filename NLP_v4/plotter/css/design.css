@@ -30,7 +30,7 @@
 	color: #f1f1f1!important;
 }
 .nav li:hover a{
-	color: #ffb74d!important;
+	color: #72d572!important;
 }
 .nav li:hover{
 	background-color: rgba(0,0,0,0.2);
@@ -208,4 +208,8 @@
 }
 .carousel-inner img{
 	width: 100%;
+}
+.value_shower{
+	font-size: 40px;
+	font-weight: bold;
 }

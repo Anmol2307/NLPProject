@@ -1,9 +1,10 @@
 from plot_data import *
+from precision_data import *
 
 stats_file = open("js/statistics.js", 'w')
 relation_file = open("js/relations.js", 'w')
 
-def printChart(print_file,labels,values,id,rgb):
+def printChart(print_file,labels,values1,values2,id,rgb1,rgb2):
 	print_file.write('$(function(){\n')
 	print_file.write('var ctx = document.getElementById("' + id + '").getContext("2d");\n')
 	print_file.write('var data = {labels:\n')
@@ -12,21 +13,32 @@ def printChart(print_file,labels,values,id,rgb):
 	print_file.write('datasets: [\n')
 	print_file.write('{\n')
 	print_file.write('label: "Sentiment Analysed",\n')
-	print_file.write('fillColor: "rgba('+ rgb +',0.5)",\n')
-	print_file.write('strokeColor: "rgba('+ rgb +',0.8)",\n')
-	print_file.write('highlightFill: "rgba('+ rgb +',0.75)",\n')
-	print_file.write('highlightStroke: "rgba('+ rgb +',1)",\n')
+	print_file.write('fillColor: "rgba('+ rgb1 +',0.5)",\n')
+	print_file.write('strokeColor: "rgba('+ rgb1 +',0.8)",\n')
+	print_file.write('highlightFill: "rgba('+ rgb1 +',0.75)",\n')
+	print_file.write('highlightStroke: "rgba('+ rgb1 +',1)",\n')
 	print_file.write('data:\n')
-	print_file.write(str(values))
+	print_file.write(str(values1))
 	print_file.write('}\n')
-
+	print_file.write(',\n')
+	print_file.write('{\n')
+	print_file.write('label: "Sentiment Analysed",\n')
+	print_file.write('fillColor: "rgba('+ rgb2 +',0.5)",\n')
+	print_file.write('strokeColor: "rgba('+ rgb2 +',0.8)",\n')
+	print_file.write('highlightFill: "rgba('+ rgb2 +',0.75)",\n')
+	print_file.write('highlightStroke: "rgba('+ rgb2 +',1)",\n')
+	print_file.write('data:\n')
+	print_file.write(str(values2))
+	print_file.write('}\n')
 	print_file.write(']};\n')
-	print_file.write('var myLineChart = new Chart(ctx).Bar(data,{});\n')
+	print_file.write('var myLineChart = new Chart(ctx).Bar(data,{animationSteps: 200});\n')
 	print_file.write('});\n')
 
 def printDoughChart(print_file,percentage,id):
 	print_file.write('$(function(){\n')
 	print_file.write('var ctx = document.getElementById("'+ id +'").getContext("2d");\n')
+	print_file.write('var value_div = document.getElementById("'+ id +'Value");\n')
+	print_file.write('value_div.innerHTML = "'+ str(percentage)+'%";\n')
 	print_file.write('var data = [\n')
 
 	print_file.write('{\n')
@@ -46,11 +58,11 @@ def printDoughChart(print_file,percentage,id):
 	print_file.write('}\n')
 
 	print_file.write('];\n')
-	print_file.write('var myDoughnutChart = new Chart(ctx).Doughnut(data,{});\n')
+	print_file.write('var myDoughnutChart = new Chart(ctx).Doughnut(data,{animationSteps: 200,animationEasing : "easeOutQuart"});\n')
 	print_file.write('});\n')
 
-printChart(stats_file,poslabels,posvalues,"posChart","37,155,36")
-printChart(stats_file,poslabels,negvalues,"negChart","232,78,64")
+printChart(stats_file,poslabels,posvalues,negvalues,"posChart","37,155,36","232,78,64")
+# printChart(stats_file,poslabels,negvalues,"negChart","232,78,64")
 printDoughChart(stats_file,percentage,"perChart")
 printDoughChart(stats_file,percentage_senti,"sentiPerChart")
 
@@ -62,7 +74,7 @@ def print_graph(print_file,id,label,aspects):
 	print_file.write('{id: 1, label: "' + label + '"},\n')
 	count = 2
 	for words in aspects:
-		print_file.write('{id: ' + str(count) + ', label: "'+ words+'"},\n')
+		print_file.write('{id: ' + str(count) + ', label: "'+ str(words)+'"},\n')
 		count += 1
 	print_file.write('];\n')
 	print_file.write('var edges_'+id+' = [\n')
@@ -97,3 +109,32 @@ for word_map in feature_graph.keys():
 	print_graph(relation_file ,str(count),word_map,removeDuplicates(feature_graph[word_map]))
 	count += 1
 
+
+def printTableData(print_file,label,precision,recall):
+	print_file.write('$(function(){\n')
+	print_file.write('var table = document.getElementById("precision_table");\n')
+	output_str = ''
+	count = 0
+	final_label = []
+	final_precision = []
+	final_recall = []
+	for word in label:
+		if(precision[count] != -1):
+			output_str += '<tr><td>'
+			output_str += str(label[count])
+			output_str += '</td><td>'
+			output_str += str(precision[count])
+			output_str += '</td><td>'
+			output_str += str(recall[count])
+			output_str += '</td></tr>'
+			final_label.append(label[count])
+			final_precision.append(precision[count])
+			final_recall.append(recall[count])
+		count += 1
+
+	print_file.write('table.innerHTML = "' + output_str + '"\n')
+	print_file.write('});\n')
+	return [final_label,final_precision,final_recall]
+
+result = printTableData(stats_file,feature_list,precision,recall)
+printChart(stats_file,result[0],result[1],result[2],"negChart","86,119,252","255,152,0")
