@@ -1,48 +1,18 @@
-picture[+3], macro[+3]##the pictures are razor-sharp , even in macro 
-size[+2][u]##it is small enough to fit easily in a coat pocket or purse 
-image[-2]## even the slightest of the shakes totally distorts your image 
-audio[-2]##audio on video also lacking 
-digital zoom[+2],optical zoom[+2]##the digital zoom takes as good of pictures , as the optical zoom does
-size[+2][u]##it is n't big and offensive , though you would n't know it by looking at the pics it takes 
-photo[+2]##just point and shoot and the photos were great
-camera[+2]##still , at least from my perspective , a great camera for the money , and i 'm a happy camper
-battery life[+1]##battery life is ok
-size[+2]##the small size is perfect for my little hands , but may perhaps be uncomfortable or awkward for a bigger person 
-camera[+3]##it really is an awesome camera that is hard to beat for general-to moderate snapping  
-battery[-2]##it comes with a rechargable battery that does not seem to last all that long , especially if you use the flash a lot 
-menu[+2]##the menus and features are easy to manipulate and access , and it takes silent movies  
-camera[+3],picture[+2]##i highly recommend this camera to anyone looking for a good digital camera that takes great pictures yet does n't take weeks to figure out how to operate  
-picture quality[+2]##we take this camera with us everywhere and are constantly amazed at the quality of the pictures that we get and the number of different ways the camera allows for pictures to be taken
-camera[+3]##i am a picture fanatic so i consider myself picky and if your the same way this camera will not let you down now buy it 
-camera[+3]##i have it for a week n  ow , and this camera has exceeded my expectations . 
-picture[+2],indoor shot[+1]##the daylight pictures are brilliant and the indoor shots are very good provided that your subject is no more than about 8 feet away . 
-battery life[-1]##2 the battery life seems to be on the short side but adequate for most situations . 
-camera[+2]##great camera . 
-use[+2]##i am impressed with how easy this camera is to use . 
-picture[+2]##it takes great pictures . 
-manual[+2]##the manual is easy to understand , and it is mostly idiot proof . 
-size[+2][u]##it is small , unlike my canon slr , so it easily fits in my pocket . 
-camera[+2]##if you 're looking for a small , compact , super resolution digital camera , you can end your search with the nikon 4300 ! 
-picture quality[+3]##after a lengthy and extensive journey for a feature-loaded , high performance , travel size camera , i initially gravitated to this little gem because of the superior picture quality 4 mega pixel 
-picture quality[+3],movie[+1]##the picture quality is amazing and you can connect it to your tv and could make silent movies that way if you wanted to . 
-use[+2]##2 it is easy enough for my grandmother to use . 
-size[+2][u],control[+2]##3 it is very compact but the controls are so well designed that they 're still easy to use .
-8mb card[-2]##i only have one complaint , and that is the 8mb card included . 
-8mb[-2]##8mb for a camera like this is a joke . 
-feature[+2]##1 it has all the features an amatuer photo-enthusiast would want . 
-use[+2]##2 it is easy enough for my grandmother to use . 
-size[+2][u],control[+2]##3 it is very compact but the controls are so well designed that they 're still easy to use 
-picture quality[+2]##7 picture quality is excellent . 
-battery life[+2]##8 battery life is excellent . 
-optical zoom[+2]##9 3x built-in optical zoom is a lot for this price range . 
-price[+2]##10 great price for all the features . 
-price[+2][u],learn[+2],image[+3]##this camera was affordable , very easy to learn , and produces spectacular images .
-size[+2]##it 's size also makes it ideal for travel . 
-camera[+3]##overall the nikon 4300 is a very dependable , robust , and useful little camera . 
-[t]nikon does it again 
-camera[+3], print quality[+3]##awesome camera with huge print quality in a tiny package . 
-closeup mode[+2], battery[+2]##the same 4mp chip from the 4500 camera , plus a 3x zoom with the ability to expand upon that with extenders , great closeup mode , long lasting rechargable battery , etc etc. 
-camera[+3]##in my opinion it 's the best camera for the money if you 're looking for something that 's easy to use , small good for travel , and provides excellent , sharp images . 
-
-
-
+size[+2],metal case[+1],use[+2],picture quality[+1],software[+2]##The good:  Small size; durable-seeming metal case; easy to use; visually distinctive; good picture quality; fast USB connection; mostly intuitive operation; really cool PhotoStitch software that knits pictures together to give wide panoramas.
+[t]
+size[+3],S100[+1]##If compact size is your highest priority in a 2-megapixel camera, the Canon PowerShot S100 Digital Elph is a standout choice and aptly named for its diminutive design.
+image quality[+1],weighs[+2]##The S100's image quality rates in the middle of its class, but it can still be a reasonable choice for students, families, or small businesses looking for an ultra-portable camera that weighs less than half a pound with media and battery pack.
+[t]
+camera[+3]##I purchased this camera before it went on sale, and while I wouldn't have minded keeping the extra $$$, it was definitely worth it.
+camera[+2],software[+2]##First, I have to say that I have NEVER had the slightest problem with this camera or the software.
+camera[+1],performs[+1],picture[+2],battery[+1]##The camera is solid, performs well, takes good pictures, and the battery lasts pretty long if you disable the LCD viewfinder.
+pictures[-1]##All that said, I am a little disappointed with the quality of the pictures from the camera.
+sharp[+3],color balance[+3],focus[+2]##They are razor sharp, the color balance is perfect, and the focus is great.
+pictures of people[-3]##When taking pictures of people, however, it shows EVERY flaw in the subject's skin.
+processing[-1]##I will also say that it takes a very long moment for the camera to do its digital image processing between the time you press the button and when the camera actually takes the picture.
+camera[+3]##I must say, I think this is the coolest camera I've ever  owned!
+size[+3]##First, it really is tiny; the size of a pack of cigarettes, maybe  a scooch deeper.
+use[+3]##Second, it is  incredibly easy to use.
+photos[+2]##I just went on a quick photo shoot in NYC's  Central Park today, and what a bunch of beautiful photos I took, if I do  say so myself (and I do!)
+use[+2][cc]##The camera is as easy to use as a point and  shoot, and with instant review on the LCD screen, you can retake any  flubbed shots on the spot.
+optical zoom[+2],cap[+1]##The two-times optical zoom operates smoothly  and quietly, and lo and behold, a two-piece shutter-like cap automatically  slides closed over the lens when you turn the camera off.

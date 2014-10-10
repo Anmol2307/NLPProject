@@ -44,7 +44,10 @@ def string_to_int(s):
     return 0
 
 for tuples in parsed_array:
-  aspects = find_aspect(tuples[0])
+  words = tuples[0].strip().lower().split()
+  aspects = []
+  for word in words:
+    aspects += find_aspect(word)
   if(aspects == []):
     continue
   for aspect in aspects:
@@ -52,7 +55,7 @@ for tuples in parsed_array:
 
     tuples[2] = tuples[2].lower()
     
-    useless = [',',':','.',';','"',"'",')','(','[',']','{','}','|','>','<','\t','\n']
+    useless = [',',':','.',';','"',"'",')','(','[',']','{','}','|','>','<','\t','\n','/']
     sentence = tuples[2]
     for characters in useless:
       sentence = sentence.replace(characters,"")
@@ -84,4 +87,3 @@ for phrase in probability_aspect_given_word.keys():
 
 trained_model = open("trained_model.py","w")
 trained_model.write("probability_aspect_given_word = " + str(probability_aspect_given_word) + "\n")
-trained_model.write("score_aspect_and_word = " + str(score_aspect_and_word))

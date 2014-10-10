@@ -25,18 +25,24 @@ def printDoughChart(print_file,percentage):
 	print_file.write('$(function(){\n')
 	print_file.write('var ctx = document.getElementById("perChart").getContext("2d");\n')
 	print_file.write('var data = [\n')
-	print_file.write('{\n')
-	print_file.write('value: ' + str(percentage) + ',\n')
-	print_file.write('color: "#46BFBD",\n')
-	print_file.write('highlight: "#5AD3D1",\n')
-	print_file.write('label: "Done"\n')
-	print_file.write('},\n')
+
 	print_file.write('{\n')
 	print_file.write('value: ' + str(100.0 - percentage) + ',\n')
 	print_file.write('color:"#F7464A",\n')
 	print_file.write('highlight: "#FF5A5E",\n')
 	print_file.write('label: "Not Done"\n')
-	print_file.write('}];\n')
+	print_file.write('}\n')
+
+	print_file.write(',\n')
+
+	print_file.write('{\n')
+	print_file.write('value: ' + str(percentage) + ',\n')
+	print_file.write('color: "#2baf2b",\n')
+	print_file.write('highlight: "#42bd41",\n')
+	print_file.write('label: "Done"\n')
+	print_file.write('}\n')
+
+	print_file.write('];\n')
 	print_file.write('var myDoughnutChart = new Chart(ctx).Doughnut(data,{});\n')
 	print_file.write('});\n')
 

@@ -18,7 +18,7 @@ for line in inputFile :
             header = aspect.split("[")
             header[1] = header[1].replace("]","")
             parsed_array.append([header[0],header[1],split_line[1]])
-            if(header_map.has_key(count)):
+            if(count in header_map.keys()):
               header_map[count].append(header[0])
             else:
               header_map[count] = [header[0]]

@@ -1,7 +1,7 @@
 $(function(){
 var ctx = document.getElementById("posChart").getContext("2d");
 var data = {labels:
-['design', 'price', 'storage', 'picture', 'service', 'media', 'lens', 'sound', 'size', 'battery'],
+['focus', 'size', 'lens', 'picture'],
 datasets: [{
 label: "Sentiment Analysed",
 fillColor: "rgba(37,155,36,0.5)",
@@ -9,23 +9,25 @@ strokeColor: "rgba(37,155,36,0.8)",
 highlightFill: "rgba(37,155,36,0.75)",
 highlightStroke: "rgba(37,155,36,1)",
 data:
-[2.333333333333333, 6.341975308641975, 5.0, 175.60855255855256, -5.0, -2.0, 3.083333333333333, 12.559523809523808, 50.36094246310965, 30.68758888170653]}]};
+[2.0, 5.75, 1.9222222222222223, 14.37882154882155]}]};
 var myLineChart = new Chart(ctx).Bar(data,{});
 });
 $(function(){
 var ctx = document.getElementById("perChart").getContext("2d");
 var data = [
 {
-value: 50.0,
-color: "#46BFBD",
-highlight: "#5AD3D1",
-label: "Done"
-},
-{
-value: 50.0,
+value: 43.75,
 color:"#F7464A",
 highlight: "#FF5A5E",
 label: "Not Done"
-}];
+}
+,
+{
+value: 56.25,
+color: "#2baf2b",
+highlight: "#42bd41",
+label: "Done"
+}
+];
 var myDoughnutChart = new Chart(ctx).Doughnut(data,{});
 });
