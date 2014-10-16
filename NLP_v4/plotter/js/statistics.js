@@ -26,17 +26,17 @@ var myLineChart = new Chart(ctx).Bar(data,{animationSteps: 200});
 $(function(){
 var ctx = document.getElementById("perChart").getContext("2d");
 var value_div = document.getElementById("perChartValue");
-value_div.innerHTML = "72.41379310344827%";
+value_div.innerHTML = "72.4137931034%";
 var data = [
 {
-value: 27.58620689655173,
+value: 27.5862068966,
 color:"#F7464A",
 highlight: "#FF5A5E",
 label: "Not Done"
 }
 ,
 {
-value: 72.41379310344827,
+value: 72.4137931034,
 color: "#2baf2b",
 highlight: "#42bd41",
 label: "Done"
@@ -47,27 +47,23 @@ var myDoughnutChart = new Chart(ctx).Doughnut(data,{animationSteps: 200,animatio
 $(function(){
 var ctx = document.getElementById("sentiPerChart").getContext("2d");
 var value_div = document.getElementById("sentiPerChartValue");
-value_div.innerHTML = "93.10344827586206%";
+value_div.innerHTML = "93.1034482759%";
 var data = [
 {
-value: 6.896551724137936,
+value: 6.89655172414,
 color:"#F7464A",
 highlight: "#FF5A5E",
 label: "Not Done"
 }
 ,
 {
-value: 93.10344827586206,
+value: 93.1034482759,
 color: "#2baf2b",
 highlight: "#42bd41",
 label: "Done"
 }
 ];
 var myDoughnutChart = new Chart(ctx).Doughnut(data,{animationSteps: 200,animationEasing : "easeOutQuart"});
-});
-$(function(){
-var table = document.getElementById("precision_table");
-table.innerHTML = "<tr><td>picture</td><td>78.57142857142857</td><td>100.0</td></tr><tr><td>battery</td><td>100.0</td><td>100.0</td></tr><tr><td>camera</td><td>20.0</td><td>100.0</td></tr><tr><td>size</td><td>100.0</td><td>50.0</td></tr><tr><td>lens</td><td>50.0</td><td>50.0</td></tr>"
 });
 $(function(){
 var ctx = document.getElementById("negChart").getContext("2d");

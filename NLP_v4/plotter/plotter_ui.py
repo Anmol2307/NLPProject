@@ -111,8 +111,8 @@ for word_map in feature_graph.keys():
 
 
 def printTableData(print_file,label,precision,recall):
-	print_file.write('$(function(){\n')
-	print_file.write('var table = document.getElementById("precision_table");\n')
+	# print_file.write('$(function(){\n')
+	# print_file.write('var table = document.getElementById("precision_table");\n')
 	output_str = ''
 	count = 0
 	final_label = []
@@ -120,20 +120,20 @@ def printTableData(print_file,label,precision,recall):
 	final_recall = []
 	for word in label:
 		if(precision[count] != -1):
-			output_str += '<tr><td>'
-			output_str += str(label[count])
-			output_str += '</td><td>'
-			output_str += str(precision[count])
-			output_str += '</td><td>'
-			output_str += str(recall[count])
-			output_str += '</td></tr>'
+			# output_str += '<tr><td>'
+			# output_str += str(label[count])
+			# output_str += '</td><td>'
+			# output_str += str(precision[count])
+			# output_str += '</td><td>'
+			# output_str += str(recall[count])
+			# output_str += '</td></tr>'
 			final_label.append(label[count])
 			final_precision.append(precision[count])
 			final_recall.append(recall[count])
 		count += 1
 
-	print_file.write('table.innerHTML = "' + output_str + '"\n')
-	print_file.write('});\n')
+	# print_file.write('table.innerHTML = "' + output_str + '"\n')
+	# print_file.write('});\n')
 	return [final_label,final_precision,final_recall]
 
 result = printTableData(stats_file,feature_list,precision,recall)
