@@ -8,7 +8,9 @@ from nltk.stem.wordnet import WordNetLemmatizer
 from parse_stanford import *
 
 what_we_know = [];
-
+file_out_text = open("testresult_header.py",'w')
+result_header_map = {}
+score_map = {}
 def find_aspect(unstemmed_noun):
 	lmtzr = WordNetLemmatizer()
 	word = lmtzr.lemmatize(unstemmed_noun)
@@ -171,14 +173,30 @@ def matchConjNeg(commands):
 		if(found_w2 and not(found_w1)):
 			continue
 
+aspect_list = []
+sentiment_list = []
 def printWhatWeKnow():
 	count = 1
+	aspect_list = []
+	sentiment_list = []
+	
 	for words in what_we_know:
+		negation = 1
 		aspect = find_aspect(words[1])
+		if aspect != "unknown feature":
+			aspect_list.append(aspect)
+		else:
+			aspect_list.apend("general")
 		sentiment_type = find_sentiment_type(words[2])
+		if sentiment_type == "negatively":
+			negation = -1	
+			
 		append_word = ""
 		if(words[3] == 1):
 			append_word = "NOT "
+			negation *= -1
+			
+		sentiment_list.append(negation)
 		
 		print str(count) + ".\t"
 		print "\t" + str(words)
@@ -199,4 +217,10 @@ for commands in  parseResult():
 	matchPureNeg(commands)
 	matchConjNeg(commands)
 	printWhatWeKnow()
+	#aspect_list = list(set(aspect_list))
+	result_header_map[line_number] = aspect_list
+	score_map[line_number] = sentiment_list
 	line_number += 1
+
+file_out_text.write("result_header_map = " + str(result_header_map))
+file_out_text.write("score_map = " + str(score_map))
