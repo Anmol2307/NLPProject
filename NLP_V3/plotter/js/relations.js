@@ -1,36 +1,5 @@
 $(function(){
 var nodes_1 = [
-{id: 1, label: "focus"},
-{id: 2, label: "razor"},
-{id: 3, label: "sharp"},
-{id: 4, label: "color"},
-{id: 5, label: "balance"},
-{id: 6, label: "perfect"},
-{id: 7, label: "focus"},
-{id: 8, label: "great"},
-];
-var edges_1 = [
-{from: 1, to: 2},
-{from: 1, to: 3},
-{from: 1, to: 4},
-{from: 1, to: 5},
-{from: 1, to: 6},
-{from: 1, to: 7},
-{from: 1, to: 8},
-];
-var container_1 = document.getElementById("container_1");
-var data_1= {
-nodes: nodes_1,
-edges: edges_1
-};
-var options_1 = {
-width: "600px",
-height: "600px"
-};
-var network_1 = new vis.Network(container_1, data_1, options_1);
-});
-$(function(){
-var nodes_2 = [
 {id: 1, label: "size"},
 {id: 2, label: "compact"},
 {id: 3, label: "size"},
@@ -55,7 +24,7 @@ var nodes_2 = [
 {id: 22, label: "scooch"},
 {id: 23, label: "deeper"},
 ];
-var edges_2 = [
+var edges_1 = [
 {from: 1, to: 2},
 {from: 1, to: 3},
 {from: 1, to: 4},
@@ -79,6 +48,37 @@ var edges_2 = [
 {from: 1, to: 22},
 {from: 1, to: 23},
 ];
+var container_1 = document.getElementById("container_1");
+var data_1= {
+nodes: nodes_1,
+edges: edges_1
+};
+var options_1 = {
+width: "600px",
+height: "600px"
+};
+var network_1 = new vis.Network(container_1, data_1, options_1);
+});
+$(function(){
+var nodes_2 = [
+{id: 1, label: "focus"},
+{id: 2, label: "razor"},
+{id: 3, label: "sharp"},
+{id: 4, label: "color"},
+{id: 5, label: "balance"},
+{id: 6, label: "perfect"},
+{id: 7, label: "focus"},
+{id: 8, label: "great"},
+];
+var edges_2 = [
+{from: 1, to: 2},
+{from: 1, to: 3},
+{from: 1, to: 4},
+{from: 1, to: 5},
+{from: 1, to: 6},
+{from: 1, to: 7},
+{from: 1, to: 8},
+];
 var container_2 = document.getElementById("container_2");
 var data_2= {
 nodes: nodes_2,
@@ -92,45 +92,6 @@ var network_2 = new vis.Network(container_2, data_2, options_2);
 });
 $(function(){
 var nodes_3 = [
-{id: 1, label: "lens"},
-{id: 2, label: "two-times"},
-{id: 3, label: "optical"},
-{id: 4, label: "zoom"},
-{id: 5, label: "smoothly"},
-{id: 6, label: "quietly"},
-{id: 7, label: "two-piece"},
-{id: 8, label: "shutter-like"},
-{id: 9, label: "cap"},
-{id: 10, label: "automatically"},
-{id: 11, label: "lens"},
-{id: 12, label: "camera"},
-];
-var edges_3 = [
-{from: 1, to: 2},
-{from: 1, to: 3},
-{from: 1, to: 4},
-{from: 1, to: 5},
-{from: 1, to: 6},
-{from: 1, to: 7},
-{from: 1, to: 8},
-{from: 1, to: 9},
-{from: 1, to: 10},
-{from: 1, to: 11},
-{from: 1, to: 12},
-];
-var container_3 = document.getElementById("container_3");
-var data_3= {
-nodes: nodes_3,
-edges: edges_3
-};
-var options_3 = {
-width: "600px",
-height: "600px"
-};
-var network_3 = new vis.Network(container_3, data_3, options_3);
-});
-$(function(){
-var nodes_4 = [
 {id: 1, label: "picture"},
 {id: 2, label: "good"},
 {id: 3, label: "small"},
@@ -230,7 +191,7 @@ var nodes_4 = [
 {id: 97, label: "shots"},
 {id: 98, label: "spot"},
 ];
-var edges_4 = [
+var edges_3 = [
 {from: 1, to: 2},
 {from: 1, to: 3},
 {from: 1, to: 4},
@@ -328,6 +289,45 @@ var edges_4 = [
 {from: 1, to: 96},
 {from: 1, to: 97},
 {from: 1, to: 98},
+];
+var container_3 = document.getElementById("container_3");
+var data_3= {
+nodes: nodes_3,
+edges: edges_3
+};
+var options_3 = {
+width: "600px",
+height: "600px"
+};
+var network_3 = new vis.Network(container_3, data_3, options_3);
+});
+$(function(){
+var nodes_4 = [
+{id: 1, label: "lens"},
+{id: 2, label: "two-times"},
+{id: 3, label: "optical"},
+{id: 4, label: "zoom"},
+{id: 5, label: "smoothly"},
+{id: 6, label: "quietly"},
+{id: 7, label: "two-piece"},
+{id: 8, label: "shutter-like"},
+{id: 9, label: "cap"},
+{id: 10, label: "automatically"},
+{id: 11, label: "lens"},
+{id: 12, label: "camera"},
+];
+var edges_4 = [
+{from: 1, to: 2},
+{from: 1, to: 3},
+{from: 1, to: 4},
+{from: 1, to: 5},
+{from: 1, to: 6},
+{from: 1, to: 7},
+{from: 1, to: 8},
+{from: 1, to: 9},
+{from: 1, to: 10},
+{from: 1, to: 11},
+{from: 1, to: 12},
 ];
 var container_4 = document.getElementById("container_4");
 var data_4= {
