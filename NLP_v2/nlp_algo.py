@@ -1,4 +1,5 @@
 import nltk
+import similarity
 from pos_list import pos_list
 from neg_list import neg_list
 from database import *
@@ -11,6 +12,19 @@ what_we_know = [];
 file_out_text = open("testresult_header.py",'w')
 result_header_map = {}
 score_map = {}
+
+#~ print(feature_list)
+max_corr=0
+def close_match(feature):
+	ans = feature_list[0]
+	for word in feature_list:
+		corr = semantic_match(word, feature)
+		if corr >= max_corr:
+			max_corr = corr
+			ans = words
+	return ans
+			
+
 def find_aspect(unstemmed_noun):
 	lmtzr = WordNetLemmatizer()
 	word = lmtzr.lemmatize(unstemmed_noun)
@@ -22,7 +36,7 @@ def find_aspect(unstemmed_noun):
 			return feature_list[count]
 		else:
 			count += 1
-	return "unknown feature"
+	return close_match(word)
 
 def find_sentiment_type(word):
 	for pos in pos_list:
