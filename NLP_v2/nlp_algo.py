@@ -177,6 +177,7 @@ aspect_list = []
 sentiment_list = []
 def printWhatWeKnow():
 	count = 1
+	global aspect_list,sentiment_list
 	aspect_list = []
 	sentiment_list = []
 	
@@ -186,7 +187,7 @@ def printWhatWeKnow():
 		if aspect != "unknown feature":
 			aspect_list.append(aspect)
 		else:
-			aspect_list.apend("general")
+			aspect_list.append("general")
 		sentiment_type = find_sentiment_type(words[2])
 		if sentiment_type == "negatively":
 			negation = -1	
@@ -222,5 +223,5 @@ for commands in  parseResult():
 	score_map[line_number] = sentiment_list
 	line_number += 1
 
-file_out_text.write("result_header_map = " + str(result_header_map))
+file_out_text.write("result_header_map = " + str(result_header_map) + "\n")
 file_out_text.write("score_map = " + str(score_map))
