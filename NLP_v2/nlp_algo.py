@@ -1,5 +1,5 @@
 import nltk
-import similarity
+from similarity import *
 from pos_list import pos_list
 from neg_list import neg_list
 from database import *
@@ -16,12 +16,14 @@ score_map = {}
 #~ print(feature_list)
 max_corr=0
 def close_match(feature):
+	global max_corr
+	max_corr = 0
 	ans = feature_list[0]
 	for word in feature_list:
 		corr = semantic_match(word, feature)
 		if corr >= max_corr:
 			max_corr = corr
-			ans = words
+			ans = word
 	return ans
 			
 
@@ -199,7 +201,7 @@ def printWhatWeKnow():
 		negation = 1
 		aspect = find_aspect(words[1])
 		if aspect != "unknown feature":
-			aspect_list.append(aspect)
+			aspect_list.append(str(aspect))
 		else:
 			aspect_list.append("general")
 		sentiment_type = find_sentiment_type(words[2])

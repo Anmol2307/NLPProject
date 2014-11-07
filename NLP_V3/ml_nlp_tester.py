@@ -10,6 +10,7 @@ from nltk.tokenize.punkt import PunktWordTokenizer
 
 file_out_text = open("testresult_header.py",'w')
 result_header_map = {}
+sentence_header_map = {}
 
 def remove_unnecessary(sentence):
   s1 = PunktWordTokenizer().tokenize(sentence)
@@ -96,6 +97,7 @@ def my_read_file():
   count = 1
   file_in = open("testfile.txt","r")
   for line in file_in:
+    sentence_header_map[count] = line
     understand_sentence(line,count)
     count += 1
 
@@ -113,6 +115,7 @@ def print_output(percentage):
 
   file_out.write("feature_graph = " + str(feature_word_map) + "\n")
   file_out.write("percentage = " + str(percentage))
+  file_out_text.write("sentence_header_map = " + str(sentence_header_map) + "\n")
   file_out_text.write("result_header_map = " + str(result_header_map))
 
 def find_aspect(unstemmed_noun):

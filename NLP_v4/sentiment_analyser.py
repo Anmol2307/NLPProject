@@ -3,6 +3,7 @@ from senti_train_data import *
 from testfile_header import *
 from testresult_header import *
 from extract_bag_count import *
+from bag_of_words import *
 
 import nltk
 from nltk.corpus import wordnet as wn
@@ -12,8 +13,10 @@ from nltk.tokenize.punkt import PunktWordTokenizer
 from nltk.classify import SklearnClassifier
 from sklearn.svm import SVC
 
-from nltk.classify import maxent
+# from nltk.classify import maxent
 
+correct_aspect_map = {}
+correct_score_map = {}
 result_score_map = {}
 feature_word_map = {}
 pos_score_map = {}
@@ -22,7 +25,7 @@ neg_score_map = {}
 
 def trained_classifier():
   # return maxent.MaxentClassifier.train(train_data)
-  # return SklearnClassifier(SVC(), sparse=False).train(train_data)
+  # return SklearnClassifier(SVC(), sparse=False).train(senti_train_data)
   return nltk.classify.NaiveBayesClassifier.train(senti_train_data)
 
 
@@ -46,7 +49,7 @@ def understand_sentence(sentence,count,classifier):
   features = []
   for word in dictionary.keys():
     if(dictionary[word]) > 0:
-      features.append(word)
+      features.append(get_senti_word_for_number(word))  
   
   dictionary["ASPECT"] = numeric_for_aspect(m_aspect)
   m_score = classifier.classify_many([(dictionary)])[0]
@@ -75,8 +78,11 @@ def understand_sentence(sentence,count,classifier):
 def my_read_file():
   classifier = trained_classifier()
   count = 1
+  print("SENTIMENT ANALYSIS STARTING...")
   file_in = open("testfile.txt","r")
   for line in file_in:
+    if(count%3 == 0):
+      print(str(100*count/30) +"%  Done..")
     understand_sentence(line,count,classifier)
     count += 1
 
@@ -84,6 +90,7 @@ my_read_file()
 
 def print_output(percentage,percentage_senti):
   file_out = open("plotter/plot_data.py","w")
+  file_result = open("plotter/result_data.py","w")
   feature_list = []
   pos_score_list = []
   neg_score_list = []
@@ -99,7 +106,13 @@ def print_output(percentage,percentage_senti):
   file_out.write("feature_graph = " + str(feature_word_map) + "\n")
   file_out.write("percentage = " + str(percentage) + "\n")
   file_out.write("percentage_senti = " + str(percentage_senti))
-
+  
+  file_result.write("sentence_map = " + str(sentence_header_map) + "\n")
+  file_result.write("score_map = " + str(result_score_map) + "\n")
+  file_result.write("correct_score_map = " + str(correct_score_map) + "\n")
+  file_result.write("correct_aspect_map = " + str(correct_aspect_map) + "\n")
+  file_result.write("aspect_map = " + str(result_header_map))
+ 
   # file_out_text.write("result_header_map = " + str(result_header_map))
 
 def find_aspect(unstemmed_noun):
@@ -127,13 +140,19 @@ for lists in header_map.keys():
     words = words.split(' ')
     found = False
     for word in words:
+      correct_list = find_aspect(word)
+      if(len(correct_list) > 0):
+        correct_aspect_map[count] = correct_list[0]
       if(result_header_map[count] in find_aspect(word)):
+        correct_aspect_map[count] = result_header_map[count]
         aspect_correct_count += 1
         found = True
       break
     if(found):
       break
+  correct_score_map[count] = score_map[lists][0]
   if(result_score_map[lists] in score_map[lists]):
+    correct_score_map[count] = result_score_map[lists]
     senti_correct_count += 1
 
 

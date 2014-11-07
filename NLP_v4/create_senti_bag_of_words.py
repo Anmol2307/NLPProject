@@ -22,7 +22,14 @@ def remove_unnecessary(sentence):
       splitted.append(lmtzr.lemmatize(pairs[0]))
   return splitted
 
+count = 0
 for tuples in parsed_array:
+  if(count == 1):
+    print("0% Complete..")
+  if(count == 3500):
+    print("50% Complete...")
+  if(count == 7000):
+    print("100% Complete....")
   words = tuples[0].strip().lower().split()
   useless = [',',':','.',';','"',"'",')','(','[',']','{','}','|','>','<','\t','\n','=']
   sentence = tuples[2]
@@ -36,7 +43,10 @@ for tuples in parsed_array:
     if(word in senti_bag_of_words):
       bag_of_words.add(word)
 
+
+
+print("Accumulated The Senti Dictionary Of Size : " + str(len(bag_of_words)))
 file_bag = open("senti_bag_of_words.py","w")
 bag_of_words = list(bag_of_words)
 file_bag.write("senti_bag_of_words = "+str(bag_of_words))
-    
+print("Printed The Senti Bag Of Words")   

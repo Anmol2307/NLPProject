@@ -40,15 +40,7 @@ for line in inputFile :
               score_map[count].append(string_to_int(header[1]))
             else:
               score_map[count] = [ string_to_int(header[1])]
-      count += 1
-    # elif count != 0:
-    #   file_out.write(split_line[1].strip() + "\n")
-    #   header_map[count] = header_map[count-1]
-    #   score_map[count] = score_map[count-1]
-    #   parsed_array.append([header_map[count-1],score_map[count-1],split_line[1]])
-    #   count += 1
-
-  
+      count += 1  
 
 file_out_header.write("header_map = " + str(header_map)+"\n")
 file_out_header.write("score_map = " + str(score_map))

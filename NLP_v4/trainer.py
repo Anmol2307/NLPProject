@@ -19,11 +19,27 @@ def find_aspect(unstemmed_noun):
       aspect_list.append(feature_list[count])
     else:
       count += 1
+#  if(aspect_list == []):
+#    return [close_match(word)]
   return aspect_list
 
 probability_aspect_given_word = {}
 count_word = {}
 score_aspect_and_word = {}
+
+'''
+from similarity import *
+
+def close_match(feature):
+  max_corr = 0
+  result = "general"
+  for word in feature_list:
+    corr = semantic_match(word, feature)
+    if corr > max_corr:
+      max_corr = corr
+      result = word
+  return result
+'''
 
 def remove_unnecessary(sentence):
   s1 = PunktWordTokenizer().tokenize(sentence)

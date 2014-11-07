@@ -64,3 +64,6 @@ def create_senti_dictionary(sentence):
 	  		# print(word)
 
 	return dictionary
+
+def get_senti_word_for_number(num):
+	return senti_bag_of_words[num]

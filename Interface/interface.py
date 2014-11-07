@@ -1,3 +1,12 @@
-input_text = input("Input Your Comment!\n")
 file_output = open("testfile.txt","w")
-file_output.write(input_text)
+print("INPUT YOUR COMMENTS BELOW, FOLLOWED BY A 'DONE'")
+while(True):
+	input_text = input("")
+	if(input_text == "DONE"):
+		break
+	sentences = input_text.split('.')
+	for sentence in sentences:
+		sentence.strip()
+		if(sentence == ""):
+			continue
+		file_output.write(sentence + " .\n")

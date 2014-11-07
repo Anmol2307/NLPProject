@@ -8,16 +8,16 @@ from nltk.corpus import wordnet as wn
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.tokenize.punkt import PunktWordTokenizer
 
+
 from nltk.classify import SklearnClassifier
 from sklearn.svm import SVC
-
-from nltk.classify import maxent
 
 file_out_text = open("testresult_header.py",'w')
 
 result_header_map = {}
 feature_word_map = {}
 score_map = {}
+sentence_header_map = {}
 
 
 def trained_classifier():
@@ -47,14 +47,18 @@ def understand_sentence(sentence,count,classifier):
 def my_read_file():
   classifier = trained_classifier()
   count = 1
+  print("ASPECT ANALYSIS STARTING...")
   file_in = open("testfile.txt","r")
   for line in file_in:
+    if(count%3 == 0):
+      print(str(100*count/30) +"%  Done..")
+    sentence_header_map[count] = line
     understand_sentence(line,count,classifier)
     count += 1
 
 my_read_file()
 
 def print_output():
-  file_out_text.write("result_header_map = " + str(result_header_map))
-
+  file_out_text.write("result_header_map = " + str(result_header_map) + "\n")
+  file_out_text.write("sentence_header_map = " + str(sentence_header_map) + "\n")
 print_output()

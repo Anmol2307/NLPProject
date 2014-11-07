@@ -1,0 +1,11 @@
+> problem statement
+> motivation 
+> utility
+> literature : Similar works 
+> methodology of data collection
+> evaluation of the tool
+> analysis : motivated by linguistic principles
+> issues
+
+confusion matrix
+pick up examples which fails 
