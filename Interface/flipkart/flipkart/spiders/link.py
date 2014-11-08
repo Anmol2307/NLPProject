@@ -1,1 +1,1 @@
-input_link = "http://www.amazon.in/product-reviews/B00JB0IZHU?pageNumber=4"
+input_link = "http://www.flipkart.com/nikon-d5100-dslr-camera/product-reviews/ITMDUZHMEYJH2ZEC"

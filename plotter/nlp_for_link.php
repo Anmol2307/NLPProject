@@ -7,10 +7,21 @@ $myfile = fopen("../Interface/flipkart/flipkart/spiders/link.py", "w") or die("U
 fwrite($myfile, "input_link = \"".$txt."\"");
 fclose($myfile);
 
-$command = 'cd ../Interface/flipkart ; scrapy crawl review -o ../input.xml';
-echo '<br/>'.$command.'<br/>';
+$final_txt = 'review';
+if(strpos($txt,'amazon') === false){
+	if(strpos($txt,'flipkart') === false){
+		header("LOCATION: interface.html");
+	}else{
+		$final_txt = 'flipkart_review';
+	}
+}
+
+
+
+$command = 'cd ../Interface/flipkart ; scrapy crawl '.$final_txt.' -o ../input.xml';
+// echo '<br/>'.$command.'<br/>';
 $output = shell_exec($command);
-echo $output.'<br/>DONE';
+// echo $output.'<br/>DONE';
 
 $file_text = file_get_contents('../Interface/input.xml', true);
 $file_text = nl2br($file_text);
@@ -31,12 +42,12 @@ fwrite($myfile, $js_txt);
 fclose($myfile);
 
 $command = 'cd ../Interface/ ; bash auto_execute.sh 2>&1';
-echo '<br/>'.$command.'<br/>';
+// echo '<br/>'.$command.'<br/>';
 $output = shell_exec($command);
-echo $output.'<br/>DONE';
+// echo $output.'<br/>DONE';
 
 $command = 'cd ../Interface/ ; python3 aspect_analysis.py; python3 sentiment_analysis.py';
-echo '<br/>'.$command.'<br/>';
+// echo '<br/>'.$command.'<br/>';
 $output = shell_exec($command);
 // echo $output.'<br/>DONE';
 

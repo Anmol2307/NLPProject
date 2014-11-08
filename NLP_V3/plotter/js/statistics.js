@@ -1,7 +1,7 @@
 $(function(){
 var ctx = document.getElementById("posChart").getContext("2d");
 var data = {labels:
-['size', 'lens', 'price', 'battery', 'general', 'picture', 'video'],
+['video', 'size', 'picture', 'battery', 'lens', 'price', 'general'],
 datasets: [{
 label: "Sentiment Analysed",
 fillColor: "rgba(37,155,36,0.5)",
@@ -9,7 +9,7 @@ strokeColor: "rgba(37,155,36,0.8)",
 highlightFill: "rgba(37,155,36,0.75)",
 highlightStroke: "rgba(37,155,36,1)",
 data:
-[8.655154173312068, 2.991666666666667, 4.230769230769231, 5.2582545956459, 2.0625, 14.153229672997117, 2.35]}]};
+[2.35, 8.655154173312068, 14.153229672997117, 5.2582545956459, 2.991666666666667, 4.230769230769231, 2.0625]}]};
 var myLineChart = new Chart(ctx).Bar(data,{});
 });
 $(function(){

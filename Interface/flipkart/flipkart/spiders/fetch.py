@@ -13,7 +13,7 @@ class FeatureSpider(Spider):
     name = "review"
     allowed_domains = ["www.amazon.in"]
     start_urls = [input_link]
-
+# "http://www.amazon.in/product-reviews/B00JB0IZHU?pageNumber=4"
     def parse(self, response):
         sel = Selector(response)
         item = FeatureItem()

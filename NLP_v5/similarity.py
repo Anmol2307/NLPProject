@@ -1,0 +1,20 @@
+from __future__ import division
+from nltk.corpus import wordnet as wn
+import sys
+## function evaluates semantic similarity score 
+def semantic_match(w1, w2, sim=wn.path_similarity):
+  synsets1 = wn.synsets(w1)
+  synsets2 = wn.synsets(w2)
+  sim_scores = []
+  for synset1 in synsets1:
+    for synset2 in synsets2:
+      value = sim(synset1, synset2)
+      if(value != None):
+        sim_scores.append(value)
+  if len(sim_scores) == 0:
+    return 0
+  else:
+    # print(str(sim_scores))
+    return max(sim_scores)
+    
+ 

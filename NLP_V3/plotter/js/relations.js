@@ -1,5 +1,65 @@
 $(function(){
 var nodes_1 = [
+{id: 1, label: "lens"},
+{id: 2, label: "digital"},
+{id: 3, label: "zoom"},
+{id: 4, label: "as"},
+{id: 5, label: "good"},
+{id: 6, label: "pictures"},
+{id: 7, label: "optical"},
+{id: 8, label: "built-in"},
+{id: 9, label: "lot"},
+{id: 10, label: "price"},
+{id: 11, label: "range"},
+];
+var edges_1 = [
+{from: 1, to: 2},
+{from: 1, to: 3},
+{from: 1, to: 4},
+{from: 1, to: 5},
+{from: 1, to: 6},
+{from: 1, to: 7},
+{from: 1, to: 8},
+{from: 1, to: 9},
+{from: 1, to: 10},
+{from: 1, to: 11},
+];
+var container_1 = document.getElementById("container_1");
+var data_1= {
+nodes: nodes_1,
+edges: edges_1
+};
+var options_1 = {
+width: "600px",
+height: "600px"
+};
+var network_1 = new vis.Network(container_1, data_1, options_1);
+});
+$(function(){
+var nodes_2 = [
+{id: 1, label: "general"},
+{id: 2, label: "easy"},
+{id: 3, label: "enough"},
+{id: 4, label: "grandmother"},
+];
+var edges_2 = [
+{from: 1, to: 2},
+{from: 1, to: 3},
+{from: 1, to: 4},
+];
+var container_2 = document.getElementById("container_2");
+var data_2= {
+nodes: nodes_2,
+edges: edges_2
+};
+var options_2 = {
+width: "600px",
+height: "600px"
+};
+var network_2 = new vis.Network(container_2, data_2, options_2);
+});
+$(function(){
+var nodes_3 = [
 {id: 1, label: "size"},
 {id: 2, label: "small"},
 {id: 3, label: "enough"},
@@ -23,7 +83,7 @@ var nodes_1 = [
 {id: 21, label: "also"},
 {id: 22, label: "travel"},
 ];
-var edges_1 = [
+var edges_3 = [
 {from: 1, to: 2},
 {from: 1, to: 3},
 {from: 1, to: 4},
@@ -46,56 +106,19 @@ var edges_1 = [
 {from: 1, to: 21},
 {from: 1, to: 22},
 ];
-var container_1 = document.getElementById("container_1");
-var data_1= {
-nodes: nodes_1,
-edges: edges_1
+var container_3 = document.getElementById("container_3");
+var data_3= {
+nodes: nodes_3,
+edges: edges_3
 };
-var options_1 = {
+var options_3 = {
 width: "600px",
 height: "600px"
 };
-var network_1 = new vis.Network(container_1, data_1, options_1);
+var network_3 = new vis.Network(container_3, data_3, options_3);
 });
 $(function(){
-var nodes_2 = [
-{id: 1, label: "lens"},
-{id: 2, label: "digital"},
-{id: 3, label: "zoom"},
-{id: 4, label: "as"},
-{id: 5, label: "good"},
-{id: 6, label: "pictures"},
-{id: 7, label: "optical"},
-{id: 8, label: "built-in"},
-{id: 9, label: "lot"},
-{id: 10, label: "price"},
-{id: 11, label: "range"},
-];
-var edges_2 = [
-{from: 1, to: 2},
-{from: 1, to: 3},
-{from: 1, to: 4},
-{from: 1, to: 5},
-{from: 1, to: 6},
-{from: 1, to: 7},
-{from: 1, to: 8},
-{from: 1, to: 9},
-{from: 1, to: 10},
-{from: 1, to: 11},
-];
-var container_2 = document.getElementById("container_2");
-var data_2= {
-nodes: nodes_2,
-edges: edges_2
-};
-var options_2 = {
-width: "600px",
-height: "600px"
-};
-var network_2 = new vis.Network(container_2, data_2, options_2);
-});
-$(function(){
-var nodes_3 = [
+var nodes_4 = [
 {id: 1, label: "battery"},
 {id: 2, label: "nt"},
 {id: 3, label: "big"},
@@ -138,7 +161,7 @@ var nodes_3 = [
 {id: 40, label: "here"},
 {id: 41, label: "amazon"},
 ];
-var edges_3 = [
+var edges_4 = [
 {from: 1, to: 2},
 {from: 1, to: 3},
 {from: 1, to: 4},
@@ -180,41 +203,6 @@ var edges_3 = [
 {from: 1, to: 40},
 {from: 1, to: 41},
 ];
-var container_3 = document.getElementById("container_3");
-var data_3= {
-nodes: nodes_3,
-edges: edges_3
-};
-var options_3 = {
-width: "600px",
-height: "600px"
-};
-var network_3 = new vis.Network(container_3, data_3, options_3);
-});
-$(function(){
-var nodes_4 = [
-{id: 1, label: "video"},
-{id: 2, label: "audio"},
-{id: 3, label: "video"},
-{id: 4, label: "also"},
-{id: 5, label: "mono"},
-{id: 6, label: "fairly"},
-{id: 7, label: "acceptable"},
-{id: 8, label: "quiet"},
-{id: 9, label: "little"},
-{id: 10, label: "distortions"},
-];
-var edges_4 = [
-{from: 1, to: 2},
-{from: 1, to: 3},
-{from: 1, to: 4},
-{from: 1, to: 5},
-{from: 1, to: 6},
-{from: 1, to: 7},
-{from: 1, to: 8},
-{from: 1, to: 9},
-{from: 1, to: 10},
-];
 var container_4 = document.getElementById("container_4");
 var data_4= {
 nodes: nodes_4,
@@ -228,6 +216,35 @@ var network_4 = new vis.Network(container_4, data_4, options_4);
 });
 $(function(){
 var nodes_5 = [
+{id: 1, label: "price"},
+{id: 2, label: "great"},
+{id: 3, label: "price"},
+{id: 4, label: "features"},
+{id: 5, label: "camera"},
+{id: 6, label: "affordable"},
+{id: 7, label: "cheap"},
+];
+var edges_5 = [
+{from: 1, to: 2},
+{from: 1, to: 3},
+{from: 1, to: 4},
+{from: 1, to: 5},
+{from: 1, to: 6},
+{from: 1, to: 7},
+];
+var container_5 = document.getElementById("container_5");
+var data_5= {
+nodes: nodes_5,
+edges: edges_5
+};
+var options_5 = {
+width: "600px",
+height: "600px"
+};
+var network_5 = new vis.Network(container_5, data_5, options_5);
+});
+$(function(){
+var nodes_6 = [
 {id: 1, label: "picture"},
 {id: 2, label: "pictures"},
 {id: 3, label: "razor-sharp"},
@@ -278,7 +295,7 @@ var nodes_5 = [
 {id: 48, label: "crisp"},
 {id: 49, label: "hundreds"},
 ];
-var edges_5 = [
+var edges_6 = [
 {from: 1, to: 2},
 {from: 1, to: 3},
 {from: 1, to: 4},
@@ -328,29 +345,6 @@ var edges_5 = [
 {from: 1, to: 48},
 {from: 1, to: 49},
 ];
-var container_5 = document.getElementById("container_5");
-var data_5= {
-nodes: nodes_5,
-edges: edges_5
-};
-var options_5 = {
-width: "600px",
-height: "600px"
-};
-var network_5 = new vis.Network(container_5, data_5, options_5);
-});
-$(function(){
-var nodes_6 = [
-{id: 1, label: "general"},
-{id: 2, label: "easy"},
-{id: 3, label: "enough"},
-{id: 4, label: "grandmother"},
-];
-var edges_6 = [
-{from: 1, to: 2},
-{from: 1, to: 3},
-{from: 1, to: 4},
-];
 var container_6 = document.getElementById("container_6");
 var data_6= {
 nodes: nodes_6,
@@ -364,13 +358,16 @@ var network_6 = new vis.Network(container_6, data_6, options_6);
 });
 $(function(){
 var nodes_7 = [
-{id: 1, label: "price"},
-{id: 2, label: "great"},
-{id: 3, label: "price"},
-{id: 4, label: "features"},
-{id: 5, label: "camera"},
-{id: 6, label: "affordable"},
-{id: 7, label: "cheap"},
+{id: 1, label: "video"},
+{id: 2, label: "audio"},
+{id: 3, label: "video"},
+{id: 4, label: "also"},
+{id: 5, label: "mono"},
+{id: 6, label: "fairly"},
+{id: 7, label: "acceptable"},
+{id: 8, label: "quiet"},
+{id: 9, label: "little"},
+{id: 10, label: "distortions"},
 ];
 var edges_7 = [
 {from: 1, to: 2},
@@ -379,6 +376,9 @@ var edges_7 = [
 {from: 1, to: 5},
 {from: 1, to: 6},
 {from: 1, to: 7},
+{from: 1, to: 8},
+{from: 1, to: 9},
+{from: 1, to: 10},
 ];
 var container_7 = document.getElementById("container_7");
 var data_7= {

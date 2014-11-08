@@ -13,14 +13,14 @@ fwrite($myfile, $js_txt);
 fclose($myfile);
 
 $command = 'cd ../Interface/ ; bash auto_execute.sh 2>&1';
-echo '<br/>'.$command.'<br/>';
+// echo '<br/>'.$command.'<br/>';
 $output = shell_exec($command);
-echo $output.'<br/>DONE';
+// echo $output.'<br/>DONE';
 
 $command = 'cd ../Interface/ ; python3 aspect_analysis.py; python3 sentiment_analysis.py';
-echo '<br/>'.$command.'<br/>';
+// echo '<br/>'.$command.'<br/>';
 $output = shell_exec($command);
-echo $output.'<br/>DONE';
+// echo $output.'<br/>DONE';
 
 header("LOCATION: interface.html");	
 ?>
