@@ -88,6 +88,8 @@ def my_read_file():
 
 my_read_file()
 
+print pos_score_map
+
 def print_output(percentage,percentage_senti):
   file_out = open("plotter/plot_data.py","w")
   file_result = open("plotter/result_data.py","w")

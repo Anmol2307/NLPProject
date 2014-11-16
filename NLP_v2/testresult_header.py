@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 result_header_map = {1: ['overall', 'picture', 'feature', 'sound']}
 score_map = {1: [1, 1, 1, -1]}
+=======
+result_header_map = {1: ['picture', 'upgrade'], 2: ['design', 'size', 'focus'], 3: ['help-care', 'focus'], 4: ['help-care'], 5: ['sound'], 6: ['design', 'shutter'], 7: ['focus', 'sound', 'picture'], 8: ['media'], 9: ['size', 'service', 'help-care'], 10: ['design', 'battery', 'service', 'exposure', 'shutter'], 11: ['shutter', 'feature', 'sound', 'size', 'lens', 'focus'], 12: ['picture', 'exposure', 'sound', 'help-care'], 13: ['media', 'upgrade', 'picture'], 14: ['design', 'picture'], 15: ['design', 'focus'], 16: ['service', 'exposure', 'sound', 'picture', 'hardware'], 17: ['sound', 'shutter'], 18: ['design', 'sound', 'size'], 19: ['design', 'help-care'], 20: ['sound'], 21: ['media'], 22: ['sound'], 23: ['price'], 24: ['lens'], 25: ['size', 'design'], 26: ['battery', 'shutter', 'help-care', 'focus', 'media', 'design', 'lens'], 27: ['sound', 'help-care', 'exposure', 'service'], 28: ['sound', 'size'], 29: ['picture']}
+result_score_map = {1: [1, 1], 2: [1, 1, 1], 3: [1, 1], 4: [1], 5: [1], 6: [-1, 1], 7: [1, 1, 1], 8: [1], 9: [1, 1, 1], 10: [1, 1, 1, 1, 1], 11: [1, 1, 1, 1, 1, 1], 12: [1, 1, 1, 1], 13: [1, 1, 1], 14: [1, 1], 15: [1, 1], 16: [-1, 1, 1, 1, 1], 17: [1, 1], 18: [1, 1, 1], 19: [1, 1], 20: [1], 21: [1], 22: [1], 23: [1], 24: [1], 25: [1, 1], 26: [-1, 1, 1, 1, 1, 1, 1], 27: [1, 1, 1, 1], 28: [1, 1], 29: [1]}
+>>>>>>> d3039e5b38ff275a5fb785f40c3d356a2613c3dd

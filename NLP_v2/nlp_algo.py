@@ -11,13 +11,18 @@ from parse_stanford import *
 what_we_know = [];
 file_out_text = open("testresult_header.py",'w')
 result_header_map = {}
-score_map = {}
+result_score_map = {}
 
 #~ print(feature_list)
+<<<<<<< HEAD
 max_corr=0
 def close_match(feature):
 	global max_corr
 	max_corr = 0
+=======
+
+def close_match(feature,max_corr):
+>>>>>>> d3039e5b38ff275a5fb785f40c3d356a2613c3dd
 	ans = feature_list[0]
 	for word in feature_list:
 		corr = semantic_match(word, feature)
@@ -38,7 +43,7 @@ def find_aspect(unstemmed_noun):
 			return feature_list[count]
 		else:
 			count += 1
-	return close_match(word)
+	return close_match(word,0)
 
 def find_sentiment_type(word):
 	for pos in pos_list:
@@ -191,6 +196,7 @@ def matchConjNeg(commands):
 
 aspect_list = []
 sentiment_list = []
+found = False
 def printWhatWeKnow():
 	count = 1
 	global aspect_list,sentiment_list
@@ -200,10 +206,18 @@ def printWhatWeKnow():
 	for words in what_we_know:
 		negation = 1
 		aspect = find_aspect(words[1])
+		found = False
 		if aspect != "unknown feature":
+<<<<<<< HEAD
 			aspect_list.append(str(aspect))
+=======
+			if aspect not in aspect_list:
+				aspect_list.append(aspect)
+				found = True;
+>>>>>>> d3039e5b38ff275a5fb785f40c3d356a2613c3dd
 		else:
 			aspect_list.append("general")
+			found = True;
 		sentiment_type = find_sentiment_type(words[2])
 		if sentiment_type == "negatively":
 			negation = -1	
@@ -212,8 +226,8 @@ def printWhatWeKnow():
 		if(words[3] == 1):
 			append_word = "NOT "
 			negation *= -1
-			
-		sentiment_list.append(negation)
+		if found:	
+			sentiment_list.append(negation)
 		
 		print str(count) + ".\t"
 		print "\t" + str(words)
@@ -236,8 +250,8 @@ for commands in  parseResult():
 	printWhatWeKnow()
 	#aspect_list = list(set(aspect_list))
 	result_header_map[line_number] = aspect_list
-	score_map[line_number] = sentiment_list
+	result_score_map[line_number] = sentiment_list
 	line_number += 1
 
 file_out_text.write("result_header_map = " + str(result_header_map) + "\n")
-file_out_text.write("score_map = " + str(score_map))
+file_out_text.write("result_score_map = " + str(result_score_map))

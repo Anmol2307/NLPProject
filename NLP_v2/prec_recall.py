@@ -10,9 +10,11 @@ from nltk.tokenize.punkt import PunktWordTokenizer
 #anotated_data = open("testfile_header.py",'r')
 #final_result = open("testresult_header.py",'r')
 file_out_text = open("prec_recall_result.py",'w')
+
 aspect_given = [];
 aspect_found = [];
 aspect_correct = [];
+
 
 def find_aspect(unstemmed_noun):
 	lmtzr = WordNetLemmatizer()

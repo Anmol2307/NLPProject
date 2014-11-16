@@ -1,34 +1,36 @@
 from database import *
-from senti_train_data import *
 from testfile_header import *
 from testresult_header import *
-from extract_bag_count import *
+
 
 import nltk
 from nltk.corpus import wordnet as wn
 from nltk.stem.wordnet import WordNetLemmatizer
 from nltk.tokenize.punkt import PunktWordTokenizer
 
-from nltk.classify import SklearnClassifier
-from sklearn.svm import SVC
-
 from nltk.classify import maxent
 
-result_score_map = {}
 feature_word_map = {}
 pos_score_map = {}
 neg_score_map = {}
 
 def print_output(percentage,percentage_senti):
   file_out = open("plotter/plot_data.py","w")
-  feature_list = []
   pos_score_list = []
   neg_score_list = []
-  for pair in pos_score_map.keys():
-    feature_list.append(pair)
-    pos_score_list.append(pos_score_map[pair])
-    neg_score_list.append(neg_score_map[pair])
-
+  for feature in feature_list:
+	pos_score_list.append(0)
+	neg_score_list.append(0)
+  for i in range(len(feature_list)):
+	  count = 0
+	  for lists in result_header_map.keys():
+		  count += 1  
+		  for j in range(len(result_header_map[count])):
+			  if feature_list[i] == result_header_map[count][j]:
+				  if result_score_map[count][j] == 1:
+					  pos_score_list[i] += 1
+				  else :
+					  neg_score_list[i] += 1
   file_out.write("poslabels = " + str(feature_list) + "\n")
   file_out.write("posvalues = " + str(pos_score_list) + "\n")
   file_out.write("negvalues = " + str(neg_score_list) + "\n")
@@ -36,10 +38,12 @@ def print_output(percentage,percentage_senti):
   file_out.write("feature_graph = " + str(feature_word_map) + "\n")
   file_out.write("percentage = " + str(percentage) + "\n")
   file_out.write("percentage_senti = " + str(percentage_senti))
+		  
+
 
   # file_out_text.write("result_header_map = " + str(result_header_map))
   
-def arrange_output():
+#def arrange_output():
 	
 
 def find_aspect(unstemmed_noun):
@@ -62,19 +66,22 @@ senti_correct_count = 0
 
 for lists in header_map.keys():
   count += 1
+  senti_correct_count += 1
   for words in header_map[lists]:
     words = words.strip()
     words = words.split(' ')
     found = False
     for word in words:
-      if(result_header_map[count] in find_aspect(word)):
-        aspect_correct_count += 1
-        found = True
-      break
+		for feature in result_header_map[count]:
+			if feature in find_aspect(word):
+				aspect_correct_count += 1
+				found = True
+		break	
     if(found):
-      break
-  if(result_score_map[lists] in score_map[lists]):
-    senti_correct_count += 1
+		break
+	
+  #if(result_score_map[lists] in score_map[lists]):
+	
 
 
 print_output(aspect_correct_count*100.0/(count*1.0),senti_correct_count*100.0/(count*1.0))
